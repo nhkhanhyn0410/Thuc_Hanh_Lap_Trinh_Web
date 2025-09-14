@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NguyenHongKhanh.SachOnline.Models;
+
 
 namespace NguyenHongKhanh.SachOnline.Controllers
 {
@@ -11,22 +13,27 @@ namespace NguyenHongKhanh.SachOnline.Controllers
         // GET: SachOnline
         public ActionResult Index()
         {
-            return View();
+            var listSachMoi = LaySachMoi(6);
+            return View(listSachMoi);
         }
 
         public ActionResult ChuDePartial()
         {
-            return PartialView();
+            var listChuDe = from cd in data.CHUDEs select cd;
+            return PartialView(listChuDe);
         }
 
         public ActionResult SachBanNhieuPartial()
         {
-            return PartialView();
+            var listSachBanChay = LaySachBanNhieu(6);
+            return PartialView(listSachBanChay);
         }
 
         public ActionResult NhaXuatBanPartial()
         {
-            return PartialView();
+            
+            var listNXB = from nxb in data.NHAXUATBANs select nxb;
+            return PartialView(listNXB);
         }
 
         public ActionResult NavbarHeaderPartial()
@@ -38,5 +45,22 @@ namespace NguyenHongKhanh.SachOnline.Controllers
         {
             return PartialView();
         }
+
+        SachOnlineDataEntities data = new SachOnlineDataEntities();
+
+        
+        private List<SACH> LaySachMoi(int count)
+        {
+            return data.SACHes.OrderByDescending(a => a.NgayCapNhat).Take(count).ToList();
+        }
+
+        private List<SACH> LaySachBanNhieu(int count)
+        {
+            return data.SACHes.OrderByDescending(a => a.SoLuongBan).Take(count).ToList();
+        }
+
+
+       
+        
     }
 }

@@ -1,54 +1,72 @@
-﻿<h2 class="text-center">SÁCH BÁN NHIỀU</h2>
+﻿@model IEnumerable<NguyenHongKhanh.SachOnline.Models.SACH>
+
+<h2 class="text-center">SÁCH BÁN NHIỀU</h2>
 
 <div class="row">
     <div class="col-lg-6 col-md-6">
         <div class="media-object-default">
-            <div class="media">
-                <div class="media-left"> <a href="#"> <img class="media-object imgsachbannhieu" src="~/Images/TH004.jpg" alt="placeholder image"> </a> </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Tên sản phẩm</h4>
-                    Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm.
-                </div>
-            </div>
-            <div class="media">
-                <div class="media-left"> <a href="#"> <img class="media-object imgsachbannhieu" src="~/Images/TH005.jpg" alt="placeholder image"> </a> </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Tên sản phẩm</h4>
-                    Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm.
-                </div>
-            </div>
-            <div class="media">
-                <div class="media-left"> <a href="#"> <img class="media-object imgsachbannhieu" src="~/Images/TH006.jpg" alt="placeholder image"></a></div>
-                <div class="media-body">
-                    <h4 class="media-heading">Tên sản phẩm</h4>
-                    Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm.
-                </div>
-            </div>
+            @{int count = 0;}
+            @foreach (var sach in Model)
+            {
+                if (count < 3)
+                {
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="@Url.Action("BookDetail","SachOnline", new { id = sach.MaSach })">
+                                <img class="media-object imgsachbannhieu"
+                                     src="~/Images/@sach.AnhBia"
+                                     alt="@sach.TenSach">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <a href="@Url.Action("BookDetail","SachOnline", new { id = sach.MaSach })">
+                                    @sach.TenSach
+                                </a>
+                            </h4>
+                            <p><strong>Giá: @String.Format("{0:N0}", sach.GiaBan) VNĐ</strong></p>
+                            <p>
+                                @Html.Raw(sach.MoTa != null && sach.MoTa.Length > 100 ?
+                             sach.MoTa.Substring(0, 100) + "..." : sach.MoTa)
+                            </p>
+                        </div>
+                    </div>
+                    count++;
+                }
+            }
         </div>
     </div>
     <div class="col-lg-6 col-md-6">
         <div class="media-object-default">
-            <div class="media">
-                <div class="media-left"> <a href="#"> <img class="media-object imgsachbannhieu" src="~/Images/TH007.jpg" alt="placeholder image"></a></div>
-                <div class="media-body">
-                    <h4 class="media-heading">Tên sản phẩm</h4>
-                    Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm.
-                </div>
-            </div>
-            <div class="media">
-                <div class="media-left"> <a href="#"> <img class="media-object imgsachbannhieu" src="~/Images/TH008.jpg" alt="placeholder image"></a></div>
-                <div class="media-body">
-                    <h4 class="media-heading">Tên sản phẩm</h4>
-                    Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm.
-                </div>
-            </div>
-            <div class="media">
-                <div class="media-left"> <a href="#"> <img class="media-object imgsachbannhieu" src="~/Images/THCB.jpg" alt="placeholder image"></a></div>
-                <div class="media-body">
-                    <h4 class="media-heading">Tên sản phẩm</h4>
-                    Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm.
-                </div>
-            </div>
+            @{count = 0;}
+            @foreach (var sach in Model)
+            {
+                if (count >= 3 && count < 6)
+                {
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="@Url.Action("BookDetail","SachOnline", new { id = sach.MaSach })">
+                                <img class="media-object imgsachbannhieu"
+                                     src="~/Images/@sach.AnhBia"
+                                     alt="@sach.TenSach">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <a href="@Url.Action("BookDetail","SachOnline", new { id = sach.MaSach })">
+                                    @sach.TenSach
+                                </a>
+                            </h4>
+                            <p><strong>Giá: @String.Format("{0:N0}", sach.GiaBan) VNĐ</strong></p>
+                            <p>
+                                @Html.Raw(sach.MoTa != null && sach.MoTa.Length > 100 ?
+                             sach.MoTa.Substring(0, 100) + "..." : sach.MoTa)
+                            </p>
+                        </div>
+                    </div>
+                }
+                count++;
+            }
         </div>
     </div>
 </div>
