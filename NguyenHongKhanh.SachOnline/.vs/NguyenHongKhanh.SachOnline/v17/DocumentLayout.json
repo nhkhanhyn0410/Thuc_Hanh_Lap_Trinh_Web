@@ -1,0 +1,215 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\NguyenHongKhanh.SachOnline\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|e:\\nguyenhongkhanh.sachonline\\nguyenhongkhanh.sachonline\\views\\sachonline\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\sachonline\\sachbannhieupartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\sachbannhieupartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\controllers\\sachonlinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\controllers\\sachonlinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\sachonline\\chudepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\chudepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\shared\\_layoutuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\shared\\_layoutuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\sachonline\\adspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\adspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\sachonline\\navbarheaderpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\navbarheaderpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\sachonline\\nhaxuatbanpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\nhaxuatbanpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\Index.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\Index.cshtml",
+              "ToolTip": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\Index.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\Index.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAEMAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-07T07:27:08.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SachOnlineController.cs",
+              "DocumentMoniker": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Controllers\\SachOnlineController.cs",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Controllers\\SachOnlineController.cs",
+              "ToolTip": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Controllers\\SachOnlineController.cs",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Controllers\\SachOnlineController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T07:25:45.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_LayoutUser.cshtml",
+              "DocumentMoniker": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\Shared\\_LayoutUser.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\Shared\\_LayoutUser.cshtml",
+              "ToolTip": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\Shared\\_LayoutUser.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\Shared\\_LayoutUser.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAADoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-07T07:04:19.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SachBanNhieuPartial.cshtml",
+              "DocumentMoniker": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\SachBanNhieuPartial.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\SachBanNhieuPartial.cshtml",
+              "ToolTip": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\SachBanNhieuPartial.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\SachBanNhieuPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-07T08:21:24.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChuDePartial.cshtml",
+              "DocumentMoniker": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\ChuDePartial.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\ChuDePartial.cshtml",
+              "ToolTip": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\ChuDePartial.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\ChuDePartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-07T08:12:40.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdsPartial.cshtml",
+              "DocumentMoniker": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\AdsPartial.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\AdsPartial.cshtml",
+              "ToolTip": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\AdsPartial.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\AdsPartial.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-07T08:32:28.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NavbarHeaderPartial.cshtml",
+              "DocumentMoniker": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NavbarHeaderPartial.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NavbarHeaderPartial.cshtml",
+              "ToolTip": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NavbarHeaderPartial.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NavbarHeaderPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-07T08:30:05.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NhaXuatBanPartial.cshtml",
+              "DocumentMoniker": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NhaXuatBanPartial.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NhaXuatBanPartial.cshtml",
+              "ToolTip": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NhaXuatBanPartial.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NhaXuatBanPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-07T08:23:20.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BundleConfig.cs",
+              "DocumentMoniker": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\App_Start\\BundleConfig.cs",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\App_Start\\BundleConfig.cs",
+              "ToolTip": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\App_Start\\BundleConfig.cs",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\App_Start\\BundleConfig.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAADwvx4AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T07:09:59.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Global.asax.cs",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Global.asax.cs",
+              "ToolTip": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Global.asax.cs",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Global.asax.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T07:55:06.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Web.config",
+              "DocumentMoniker": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\Web.config",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\Web.config",
+              "ToolTip": "E:\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\Web.config",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\Web.config",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-09-07T07:55:47.58Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
