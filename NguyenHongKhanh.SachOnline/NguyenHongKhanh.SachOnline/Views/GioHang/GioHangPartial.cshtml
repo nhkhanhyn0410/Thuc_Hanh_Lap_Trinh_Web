@@ -1,0 +1,21 @@
+﻿@using NguyenHongKhanh.SachOnline.Models
+
+@{
+    List<GioHang> lstGioHang = Session["GioHang"] as List<GioHang>;
+    int tongSoLuong = 0;
+    decimal tongTien = 0;
+
+    if (lstGioHang != null)
+    {
+        tongSoLuong = lstGioHang.Sum(n => n.iSoLuong);
+        tongTien = (decimal)lstGioHang.Sum(n => n.dThanhTien);
+    }
+}
+
+<li>
+    <a href="@Url.Action("GioHang","GioHang")">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        Giỏ hàng
+        <span class="badge">@tongSoLuong</span>
+    </a>
+</li>

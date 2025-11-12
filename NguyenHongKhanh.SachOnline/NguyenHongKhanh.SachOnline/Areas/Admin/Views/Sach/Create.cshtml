@@ -1,0 +1,101 @@
+@model NguyenHongKhanh.SachOnline.Models.SACH
+
+@{
+    ViewBag.Title = "Thêm mới sách";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">THÊM MỚI SÁCH</h2>
+
+@if (ViewBag.ThongBao != null)
+{
+    <div class="alert alert-warning">
+        @ViewBag.ThongBao
+    </div>
+}
+
+@using (Html.BeginForm("Create", "Sach", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Tên sách</label>
+            <div class="col-md-10">
+                <input type="text" name="sTenSach" class="form-control" value="@ViewBag.TenSach" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Mô tả</label>
+            <div class="col-md-10">
+                <textarea id="sMoTa" name="sMoTa" class="form-control" rows="5">@ViewBag.MoTa</textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Ảnh bìa</label>
+            <div class="col-md-10">
+                <input type="file" name="fFileUpload" class="form-control" accept="image/*" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Ngày cập nhật</label>
+            <div class="col-md-10">
+                <input type="date" name="dNgayCapNhat" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Số lượng</label>
+            <div class="col-md-10">
+                <input type="number" name="iSoLuong" class="form-control" value="@ViewBag.SoLuong" min="0" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Giá bán</label>
+            <div class="col-md-10">
+                <input type="number" name="mGiaBan" class="form-control" value="@ViewBag.GiaBan" min="0" step="0.01" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Chủ đề</label>
+            <div class="col-md-10">
+                @Html.DropDownList("MaCD", null, "-- Chọn chủ đề --", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Nhà xuất bản</label>
+            <div class="col-md-10">
+                @Html.DropDownList("MaNXB", null, "-- Chọn nhà xuất bản --", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Thêm mới" class="btn btn-success" />
+                @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        // Khởi tạo CKEditor cho trường Mô tả
+        CKEDITOR.replace('sMoTa', {
+            height: 300,
+            filebrowserImageUploadUrl: '@Url.Action("UploadImage", "Image")',
+            filebrowserUploadMethod: 'form'
+        });
+    </script>
+}

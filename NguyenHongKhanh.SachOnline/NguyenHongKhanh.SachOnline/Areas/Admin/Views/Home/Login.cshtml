@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login Admin</title>
+</head>
+<body>
+    <form action="~/Admin/Home/Login" method="post">
+        <h2 style="text-align:center">LOGIN ADMIN</h2>
+        <p style="color:red">@ViewBag.ThongBao</p>
+
+        <label>Username:</label>
+        <input type="text" name="UserName" required />
+
+        <label>Password:</label>
+        <input type="password" name="Password" required />
+
+        <input type="submit" value="Login" />
+    </form>
+</body>
+</html>

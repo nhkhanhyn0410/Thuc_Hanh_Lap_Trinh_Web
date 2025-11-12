@@ -1,0 +1,104 @@
+﻿@using NguyenHongKhanh.SachOnline.Models
+@using PagedList.Mvc
+@model PagedList.PagedList<SACH>
+
+@{
+    ViewBag.Title = "TRANG CHỦ";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<style type="text/css">
+    .imgbook {
+        transition: all 1s ease-in;
+        width: 400px;
+    }
+
+        .imgbook:hover {
+            transform: scale(0.9);
+            cursor: pointer;
+        }
+</style>
+
+<h2 class="text-center">SÁCH MỚI</h2>
+<hr>
+
+<div class="row text-center">
+    @foreach (var sach in Model)
+    {
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+            <div class="thumbnail">
+                <img src="~/Images/@sach.AnhBia" alt="@sach.TenSach"
+                     class="img-responsive img-rounded imgbook" style="width:400px;">
+                <div class="caption">
+                    <h4 style="min-height:70px;">
+                        <a href="@Url.Action("ChiTietSach","SachOnline", new { id = sach.MaSach })">
+                            @sach.TenSach
+                        </a>
+                    </h4>
+                    <p>
+                        <strong>Giá: @String.Format("{0:N0}", sach.GiaBan) VNĐ</strong>
+                    </p>
+                    <p>
+                        <a href="@Url.Action("ThemGioHang","GioHang", new { ms = sach.MaSach, url = Request.Url.ToString() })"
+                           class="btn btn-primary" role="button">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                            Add to Cart
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@*PHẦN PHÂN TRANG*@
+<div class="text-center" style="margin: 30px 0;">
+    <p style="margin-bottom: 15px; font-size: 16px;">
+        Trang <strong>@Model.PageNumber</strong> / <strong>@Model.PageCount</strong>
+        (Hiển thị <strong>@Model.Count</strong> / <strong>@Model.TotalItemCount</strong> sách)
+    </p>
+
+    <div class="MenuTrang">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
+</div>
+
+<style>
+    .MenuTrang {
+        display: inline-block;
+        text-align: center;
+    }
+
+        .MenuTrang a {
+            padding: 8px 12px;
+            margin: 0 3px;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            color: #337ab7;
+            border-radius: 3px;
+            background-color: white;
+        }
+
+            .MenuTrang a:hover {
+                background-color: #337ab7;
+                color: white;
+                border-color: #337ab7;
+            }
+
+        .MenuTrang .active a {
+            background-color: #337ab7;
+            color: white;
+            border-color: #337ab7;
+        }
+
+        .MenuTrang .disabled a {
+            color: #999;
+            cursor: not-allowed;
+            background-color: #f9f9f9;
+        }
+</style>
+
+@*Phần Sách Bán Chạy*@
+@section SachBanNhieu{
+    @Html.Action("SachBanNhieuPartial", "SachOnline")
+}

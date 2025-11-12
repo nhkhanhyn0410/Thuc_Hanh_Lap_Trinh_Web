@@ -1,0 +1,139 @@
+﻿@*Khai báo để sử dụng chức năng phân trang*@
+@using NguyenHongKhanh.SachOnline.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<NguyenHongKhanh.SachOnline.Models.SACH>
+
+@*Xây dựng một helper tùy chỉnh để cắt độ dài chuỗi*@
+@helper Truncate(string s, int length)
+{
+    if (s.Length < length)
+    {
+        @s
+    }
+    else
+    {
+        @s.Substring(0, length)<text>...</text>
+    }
+}
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">QUẢN LÝ THÔNG TIN SÁCH</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-success" })
+</p>
+
+<table class="table table-bordered table-hover">
+    <tr style="background-color: #f0f0f0; font-weight: bold;">
+        <th style="text-align:center;width:140px">
+            Tên sách
+        </th>
+        <th style="text-align:center;width:200px">
+            Mô tả
+        </th>
+        <th style="text-align:center;width:80px">
+            @Html.DisplayNameFor(model => model.First().AnhBia)
+        </th>
+        <th style="text-align:center;width:100px">
+            Ngày cập nhật
+        </th>
+        <th style="text-align:center;width:80px">
+            Số lượng
+        </th>
+        <th style="text-align:center;width:80px">
+            @Html.DisplayNameFor(model => model.First().GiaBan)
+        </th>
+        <th style="text-align:center;width:100px">
+            Chủ đề
+        </th>
+        <th style="text-align:center;width:100px">
+            Nhà xuất bản
+        </th>
+        <th style="text-align:center">Thao tác</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @*Sử dụng helper để cắt TenSach lấy 50 ký tự*@
+                @Truncate(item.TenSach, 50)
+            </td>
+            <td>
+                @*Sử dụng helper để cắt MoTa lấy 70 ký tự*@
+                @Html.Raw(Truncate(item.MoTa, 70).ToString())
+            </td>
+            <td style="text-align:center">
+                <img src="~/Images/@item.AnhBia" style="width:50px;" alt="@item.TenSach" />
+            </td>
+            <td style="text-align:center">
+                @*Định dạng hiển thị*@
+                @Html.FormatValue(@item.NgayCapNhat, "{0:dd/MM/yyyy}")
+            </td>
+            <td style="text-align:center">
+                @Html.DisplayFor(modelItem => item.SoLuongBan)
+            </td>
+            <td style="text-align:right; padding-right:10px;">
+                @Html.FormatValue(item.GiaBan, "{0:#,##0}") VNĐ
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHUDE.TenChuDe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NHAXUATBAN.TenNXB)
+            </td>
+            <td style="text-align:center">
+                <a href="@Url.Action("Edit", new { id = item.MaSach })" class="btn btn-warning btn-sm" role="button" title="Sửa">
+                    <i class="glyphicon glyphicon-pencil"></i> Sửa
+                </a>
+                <a href="@Url.Action("Details", new { id = item.MaSach })" class="btn btn-primary btn-sm" role="button" title="Chi tiết">
+                    <i class="glyphicon glyphicon-info-sign"></i> Chi tiết
+                </a>
+                <a href="@Url.Action("Delete", new { id = item.MaSach })" class="btn btn-danger btn-sm" role="button" title="Xóa"
+                   onclick="return confirm('Bạn có chắc chắn muốn xóa sách này?');">
+                    <i class="glyphicon glyphicon-trash"></i> Xóa
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+
+@*Tạo liên kết phân trang*@
+<div style="text-align:center; margin-top:20px;">
+    <strong>Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount</strong>
+    <div class="MenuTrang">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
+</div>
+
+<style>
+    .MenuTrang {
+        display: inline-block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+        .MenuTrang a {
+            padding: 5px 10px;
+            margin: 0 2px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            text-decoration: none;
+            color: #333;
+        }
+
+            .MenuTrang a:hover {
+                background-color: #007bff;
+                color: white;
+            }
+
+        .MenuTrang .active a {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+</style>

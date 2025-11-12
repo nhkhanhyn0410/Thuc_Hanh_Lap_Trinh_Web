@@ -1,0 +1,109 @@
+@model NguyenHongKhanh.SachOnline.Models.SACH
+
+@{
+    ViewBag.Title = "Chỉnh sửa sách";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">CHỈNH SỬA THÔNG TIN SÁCH</h2>
+
+@using (Html.BeginForm("Edit", "Sach", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <input type="hidden" name="iMaSach" value="@Model.MaSach" />
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Mã sách</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.MaSach</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Tên sách</label>
+            <div class="col-md-10">
+                <input type="text" name="sTenSach" class="form-control" value="@Model.TenSach" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Mô tả</label>
+            <div class="col-md-10">
+                <textarea id="sMoTa" name="sMoTa" class="form-control" rows="5">@Model.MoTa</textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Ảnh bìa hiện tại</label>
+            <div class="col-md-10">
+                @if (!string.IsNullOrEmpty(Model.AnhBia))
+                {
+                    <img src="~/Images/@Model.AnhBia" alt="@Model.TenSach" style="max-width: 200px; margin-bottom: 10px;" />
+                }
+                <input type="file" name="fFileUpload" class="form-control" accept="image/*" />
+                <small class="text-muted">Chọn file mới nếu muốn thay đổi ảnh bìa</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Ngày cập nhật</label>
+            <div class="col-md-10">
+                <input type="date" name="dNgayCapNhat" class="form-control"
+                       value="@(Model.NgayCapNhat.HasValue ? Model.NgayCapNhat.Value.ToString("yyyy-MM-dd") : DateTime.Now.ToString("yyyy-MM-dd"))" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Số lượng</label>
+            <div class="col-md-10">
+                <input type="number" name="iSoLuong" class="form-control" value="@Model.SoLuongBan" min="0" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Giá bán</label>
+            <div class="col-md-10">
+                <input type="number" name="mGiaBan" class="form-control" value="@Model.GiaBan" min="0" step="0.01" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Chủ đề</label>
+            <div class="col-md-10">
+                @Html.DropDownList("MaCD", null, "-- Chọn chủ đề --", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Nhà xuất bản</label>
+            <div class="col-md-10">
+                @Html.DropDownList("MaNXB", null, "-- Chọn nhà xuất bản --", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cập nhật" class="btn btn-primary" />
+                @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        // Khởi tạo CKEditor cho trường Mô tả
+        CKEDITOR.replace('sMoTa', {
+            height: 300,
+            filebrowserImageUploadUrl: '@Url.Action("UploadImage", "Image")',
+            filebrowserUploadMethod: 'form'
+        });
+    </script>
+}

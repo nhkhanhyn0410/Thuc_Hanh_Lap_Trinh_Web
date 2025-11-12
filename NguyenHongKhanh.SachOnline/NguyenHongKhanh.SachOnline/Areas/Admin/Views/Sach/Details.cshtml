@@ -1,0 +1,68 @@
+@model NguyenHongKhanh.SachOnline.Models.SACH
+
+@{
+    ViewBag.Title = "Chi tiết sách";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">CHI TIẾT THÔNG TIN SÁCH</h2>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">@Model.TenSach</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                @if (!string.IsNullOrEmpty(Model.AnhBia))
+                {
+                    <img src="~/Images/@Model.AnhBia" alt="@Model.TenSach" class="img-responsive img-thumbnail" />
+                }
+                else
+                {
+                    <div class="alert alert-info">Không có ảnh bìa</div>
+                }
+            </div>
+            <div class="col-md-8">
+                <dl class="dl-horizontal">
+                    <dt>Mã sách:</dt>
+                    <dd>@Model.MaSach</dd>
+
+                    <dt>Tên sách:</dt>
+                    <dd>@Model.TenSach</dd>
+
+                    <dt>Mô tả:</dt>
+                    <dd>@Html.Raw(Model.MoTa)</dd>
+
+                    <dt>Ngày cập nhật:</dt>
+                    <dd>@Html.FormatValue(Model.NgayCapNhat, "{0:dd/MM/yyyy}")</dd>
+
+                    <dt>Số lượng bán:</dt>
+                    <dd>@Model.SoLuongBan</dd>
+
+                    <dt>Giá bán:</dt>
+                    <dd>@Html.FormatValue(Model.GiaBan, "{0:#,##0}") VNĐ</dd>
+
+                    <dt>Chủ đề:</dt>
+                    <dd>@(Model.CHUDE != null ? Model.CHUDE.TenChuDe : "N/A")</dd>
+
+                    <dt>Nhà xuất bản:</dt>
+                    <dd>@(Model.NHAXUATBAN != null ? Model.NHAXUATBAN.TenNXB : "N/A")</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <a href="@Url.Action("Edit", new { id = Model.MaSach })" class="btn btn-warning">
+            <i class="glyphicon glyphicon-pencil"></i> Chỉnh sửa
+        </a>
+        <a href="@Url.Action("Delete", new { id = Model.MaSach })" class="btn btn-danger">
+            <i class="glyphicon glyphicon-trash"></i> Xóa
+        </a>
+        @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-default" })
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

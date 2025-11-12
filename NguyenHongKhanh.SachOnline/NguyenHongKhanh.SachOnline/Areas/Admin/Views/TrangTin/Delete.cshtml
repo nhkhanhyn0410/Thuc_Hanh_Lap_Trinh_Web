@@ -1,0 +1,55 @@
+@model NguyenHongKhanh.SachOnline.Models.TRANGTIN
+
+@{
+    ViewBag.Title = "Xóa trang tin";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">XÓA TRANG TIN</h2>
+
+<div class="alert alert-warning">
+    <strong>Cảnh báo!</strong> Bạn có chắc chắn muốn xóa trang tin này không?
+</div>
+
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h3 class="panel-title">Thông tin trang tin sẽ bị xóa</h3>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Mã TT:</dt>
+            <dd>@Model.MaTT</dd>
+
+            <dt>Tên trang:</dt>
+            <dd>@Model.TenTrang</dd>
+
+            <dt>MetaTitle:</dt>
+            <dd><code>@Model.MetaTitle</code></dd>
+
+            <dt>Ngày tạo:</dt>
+            <dd>@Html.FormatValue(Model.NgayTao, "{0:dd/MM/yyyy HH:mm}")</dd>
+
+            <dt>Nội dung:</dt>
+            <dd>
+                <div class="well" style="max-height: 300px; overflow-y: auto;">
+                    @Html.Raw(Model.NoiDung)
+                </div>
+            </dd>
+        </dl>
+    </div>
+    <div class="panel-footer">
+        @using (Html.BeginForm("Delete", "TrangTin", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.MaTT" />
+            <button type="submit" class="btn btn-danger">
+                <i class="glyphicon glyphicon-trash"></i> Xác nhận xóa
+            </button>
+            @Html.ActionLink("Hủy bỏ", "Index", null, new { @class = "btn btn-default" })
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

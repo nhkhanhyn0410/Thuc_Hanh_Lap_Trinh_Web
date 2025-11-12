@@ -1,0 +1,39 @@
+@model NguyenHongKhanh.SachOnline.Models.CHUDE
+
+@{
+    ViewBag.Title = "Chi tiết chủ đề";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">CHI TIẾT CHỦ ĐỀ</h2>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">@Model.TenChuDe</h3>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Mã chủ đề:</dt>
+            <dd>@Model.MaCD</dd>
+
+            <dt>Tên chủ đề:</dt>
+            <dd>@Model.TenChuDe</dd>
+
+            <dt>Số lượng sách:</dt>
+            <dd>@(Model.SACHes != null ? Model.SACHes.Count() : 0) cuốn</dd>
+        </dl>
+    </div>
+    <div class="panel-footer">
+        <a href="@Url.Action("Edit", new { id = Model.MaCD })" class="btn btn-warning">
+            <i class="glyphicon glyphicon-pencil"></i> Chỉnh sửa
+        </a>
+        <a href="@Url.Action("Delete", new { id = Model.MaCD })" class="btn btn-danger">
+            <i class="glyphicon glyphicon-trash"></i> Xóa
+        </a>
+        @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-default" })
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,89 @@
+@using NguyenHongKhanh.SachOnline.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<NguyenHongKhanh.SachOnline.Models.CHUDE>
+
+@{
+    ViewBag.Title = "Quản lý Chủ đề";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">QUẢN LÝ CHỦ ĐỀ</h2>
+
+<p>
+    @Html.ActionLink("Thêm chủ đề mới", "Create", null, new { @class = "btn btn-success" })
+</p>
+
+<table class="table table-bordered table-hover">
+    <tr style="background-color: #f0f0f0; font-weight: bold;">
+        <th style="text-align:center;width:100px">
+            Mã chủ đề
+        </th>
+        <th style="text-align:center">
+            Tên chủ đề
+        </th>
+        <th style="text-align:center;width:300px">Thao tác</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="text-align:center">
+                @Html.DisplayFor(modelItem => item.MaCD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenChuDe)
+            </td>
+            <td style="text-align:center">
+                <a href="@Url.Action("Edit", new { id = item.MaCD })" class="btn btn-warning btn-sm" role="button" title="Sửa">
+                    <i class="glyphicon glyphicon-pencil"></i> Sửa
+                </a>
+                <a href="@Url.Action("Details", new { id = item.MaCD })" class="btn btn-primary btn-sm" role="button" title="Chi tiết">
+                    <i class="glyphicon glyphicon-info-sign"></i> Chi tiết
+                </a>
+                <a href="@Url.Action("Delete", new { id = item.MaCD })" class="btn btn-danger btn-sm" role="button" title="Xóa"
+                   onclick="return confirm('Bạn có chắc chắn muốn xóa chủ đề này?');">
+                    <i class="glyphicon glyphicon-trash"></i> Xóa
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<div style="text-align:center; margin-top:20px;">
+    <strong>Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount</strong>
+    <div class="MenuTrang">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
+</div>
+
+<style>
+    .MenuTrang {
+        display: inline-block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+        .MenuTrang a {
+            padding: 5px 10px;
+            margin: 0 2px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            text-decoration: none;
+            color: #333;
+        }
+
+            .MenuTrang a:hover {
+                background-color: #007bff;
+                color: white;
+            }
+
+        .MenuTrang .active a {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+</style>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

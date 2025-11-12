@@ -1,0 +1,58 @@
+@model NguyenHongKhanh.SachOnline.Models.NHAXUATBAN
+
+@{
+    ViewBag.Title = "Xóa nhà xuất bản";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">XÓA NHÀ XUẤT BẢN</h2>
+
+@if (ViewBag.ThongBao != null)
+{
+    <div class="alert alert-danger">
+        @Html.Raw(ViewBag.ThongBao)
+    </div>
+}
+
+<div class="alert alert-warning">
+    <strong>Cảnh báo!</strong> Bạn có chắc chắn muốn xóa nhà xuất bản này không?
+</div>
+
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h3 class="panel-title">Thông tin nhà xuất bản sẽ bị xóa</h3>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Mã nhà xuất bản:</dt>
+            <dd>@Model.MaNXB</dd>
+
+            <dt>Tên nhà xuất bản:</dt>
+            <dd>@Model.TenNXB</dd>
+
+            <dt>Địa chỉ:</dt>
+            <dd>@(String.IsNullOrEmpty(Model.DiaChi) ? "Chưa cập nhật" : Model.DiaChi)</dd>
+
+            <dt>Điện thoại:</dt>
+            <dd>@(String.IsNullOrEmpty(Model.DienThoai) ? "Chưa cập nhật" : Model.DienThoai)</dd>
+
+            <dt>Số lượng sách:</dt>
+            <dd>@(Model.SACHes != null ? Model.SACHes.Count() : 0) cuốn</dd>
+        </dl>
+    </div>
+    <div class="panel-footer">
+        @using (Html.BeginForm("Delete", "NhaXuatBan", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.MaNXB" />
+            <button type="submit" class="btn btn-danger">
+                <i class="glyphicon glyphicon-trash"></i> Xác nhận xóa
+            </button>
+            @Html.ActionLink("Hủy bỏ", "Index", null, new { @class = "btn btn-default" })
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

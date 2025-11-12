@@ -1,0 +1,93 @@
+@using NguyenHongKhanh.SachOnline.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<NguyenHongKhanh.SachOnline.Models.NHAXUATBAN>
+
+@{
+    ViewBag.Title = "Quản lý Nhà xuất bản";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">QUẢN LÝ NHÀ XUẤT BẢN</h2>
+
+<p>
+    @Html.ActionLink("Thêm nhà xuất bản mới", "Create", null, new { @class = "btn btn-success" })
+</p>
+
+<table class="table table-bordered table-hover">
+    <tr style="background-color: #f0f0f0; font-weight: bold;">
+        <th style="text-align:center;width:80px">Mã NXB</th>
+        <th style="text-align:center;width:200px">Tên nhà xuất bản</th>
+        <th style="text-align:center;width:250px">Địa chỉ</th>
+        <th style="text-align:center;width:120px">Điện thoại</th>
+        <th style="text-align:center;width:250px">Thao tác</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="text-align:center">
+                @Html.DisplayFor(modelItem => item.MaNXB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNXB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td style="text-align:center">
+                @Html.DisplayFor(modelItem => item.DienThoai)
+            </td>
+            <td style="text-align:center">
+                <a href="@Url.Action("Edit", new { id = item.MaNXB })" class="btn btn-warning btn-sm" title="Sửa">
+                    <i class="glyphicon glyphicon-pencil"></i> Sửa
+                </a>
+                <a href="@Url.Action("Details", new { id = item.MaNXB })" class="btn btn-primary btn-sm" title="Chi tiết">
+                    <i class="glyphicon glyphicon-info-sign"></i> Chi tiết
+                </a>
+                <a href="@Url.Action("Delete", new { id = item.MaNXB })" class="btn btn-danger btn-sm" title="Xóa"
+                   onclick="return confirm('Bạn có chắc chắn muốn xóa nhà xuất bản này?');">
+                    <i class="glyphicon glyphicon-trash"></i> Xóa
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<div style="text-align:center; margin-top:20px;">
+    <strong>Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount</strong>
+    <div class="MenuTrang">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
+</div>
+
+<style>
+    .MenuTrang {
+        display: inline-block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+        .MenuTrang a {
+            padding: 5px 10px;
+            margin: 0 2px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            text-decoration: none;
+            color: #333;
+        }
+
+            .MenuTrang a:hover {
+                background-color: #007bff;
+                color: white;
+            }
+
+        .MenuTrang .active a {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+</style>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

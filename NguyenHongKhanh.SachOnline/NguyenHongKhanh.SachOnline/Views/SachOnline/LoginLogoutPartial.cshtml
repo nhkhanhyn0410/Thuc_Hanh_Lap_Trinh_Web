@@ -1,0 +1,35 @@
+﻿@using NguyenHongKhanh.SachOnline.Models
+
+@{
+    KHACHHANG kh = (KHACHHANG)Session["TaiKhoan"];
+}
+
+@if (Session["TaiKhoan"] == null)
+{
+    <!-- Giao diện khi chưa đăng nhập -->
+    <li>
+        <a href="@Url.Action("DangKy","User")">
+            <span class="glyphicon glyphicon-user"></span> Đăng ký
+        </a>
+    </li>
+    <li>
+        <a href="@Url.Action("DangNhap","User", new { id = 1 })">
+            <span class="glyphicon glyphicon-log-in"></span> Đăng nhập
+        </a>
+    </li>
+}
+else
+{
+    <!-- Giao diện khi đã đăng nhập -->
+    <li>
+        <a href="#">
+            <span class="glyphicon glyphicon-user"></span>
+            Xin chào: @kh.HoTen
+        </a>
+    </li>
+    <li>
+        <a href="@Url.Action("DangXuat","User")">
+            <span class="glyphicon glyphicon-log-out"></span> Đăng xuất
+        </a>
+    </li>
+}

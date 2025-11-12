@@ -1,0 +1,52 @@
+@model NguyenHongKhanh.SachOnline.Models.CHUDE
+
+@{
+    ViewBag.Title = "Xóa chủ đề";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">XÓA CHỦ ĐỀ</h2>
+
+@if (ViewBag.ThongBao != null)
+{
+    <div class="alert alert-danger">
+        @Html.Raw(ViewBag.ThongBao)
+    </div>
+}
+
+<div class="alert alert-warning">
+    <strong>Cảnh báo!</strong> Bạn có chắc chắn muốn xóa chủ đề này không?
+</div>
+
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h3 class="panel-title">Thông tin chủ đề sẽ bị xóa</h3>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Mã chủ đề:</dt>
+            <dd>@Model.MaCD</dd>
+
+            <dt>Tên chủ đề:</dt>
+            <dd>@Model.TenChuDe</dd>
+
+            <dt>Số lượng sách:</dt>
+            <dd>@(Model.SACHes != null ? Model.SACHes.Count() : 0) cuốn</dd>
+        </dl>
+    </div>
+    <div class="panel-footer">
+        @using (Html.BeginForm("Delete", "ChuDe", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.MaCD" />
+            <button type="submit" class="btn btn-danger">
+                <i class="glyphicon glyphicon-trash"></i> Xác nhận xóa
+            </button>
+            @Html.ActionLink("Hủy bỏ", "Index", null, new { @class = "btn btn-default" })
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

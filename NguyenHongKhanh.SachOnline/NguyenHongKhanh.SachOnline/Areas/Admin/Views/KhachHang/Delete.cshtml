@@ -1,0 +1,67 @@
+@model NguyenHongKhanh.SachOnline.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "Xóa khách hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">XÓA KHÁCH HÀNG</h2>
+
+@if (ViewBag.ThongBao != null)
+{
+    <div class="alert alert-danger">
+        @Html.Raw(ViewBag.ThongBao)
+    </div>
+}
+
+<div class="alert alert-warning">
+    <strong>Cảnh báo!</strong> Bạn có chắc chắn muốn xóa khách hàng này không?
+</div>
+
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h3 class="panel-title">Thông tin khách hàng sẽ bị xóa</h3>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Mã khách hàng:</dt>
+            <dd>@Model.MaKH</dd>
+
+            <dt>Họ tên:</dt>
+            <dd>@Model.HoTen</dd>
+
+            <dt>Tài khoản:</dt>
+            <dd>@Model.TaiKhoan</dd>
+
+            <dt>Email:</dt>
+            <dd>@(String.IsNullOrEmpty(Model.Email) ? "Chưa cập nhật" : Model.Email)</dd>
+
+            <dt>Địa chỉ:</dt>
+            <dd>@(String.IsNullOrEmpty(Model.DiaChi) ? "Chưa cập nhật" : Model.DiaChi)</dd>
+
+            <dt>Điện thoại:</dt>
+            <dd>@(String.IsNullOrEmpty(Model.DienThoai) ? "Chưa cập nhật" : Model.DienThoai)</dd>
+
+            <dt>Ngày sinh:</dt>
+            <dd>@(Model.NgaySinh.HasValue ? Model.NgaySinh.Value.ToString("dd/MM/yyyy") : "Chưa cập nhật")</dd>
+
+            <dt>Số đơn hàng:</dt>
+            <dd>@(Model.DONDATHANGs != null ? Model.DONDATHANGs.Count() : 0) đơn</dd>
+        </dl>
+    </div>
+    <div class="panel-footer">
+        @using (Html.BeginForm("Delete", "KhachHang", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.MaKH" />
+            <button type="submit" class="btn btn-danger">
+                <i class="glyphicon glyphicon-trash"></i> Xác nhận xóa
+            </button>
+            @Html.ActionLink("Hủy bỏ", "Index", null, new { @class = "btn btn-default" })
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

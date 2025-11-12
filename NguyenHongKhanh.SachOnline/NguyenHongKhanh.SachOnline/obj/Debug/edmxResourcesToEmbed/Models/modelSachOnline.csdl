@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SachOnlineDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SachOnlineDataEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SachOnlineDataModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SachOnlineDataModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="ADMINs" EntityType="SachOnlineDataModel.ADMIN" />
+    <EntitySet Name="CHITIETDATHANGs" EntityType="SachOnlineDataModel.CHITIETDATHANG" />
+    <EntitySet Name="CHUDEs" EntityType="SachOnlineDataModel.CHUDE" />
+    <EntitySet Name="DONDATHANGs" EntityType="SachOnlineDataModel.DONDATHANG" />
+    <EntitySet Name="KHACHHANGs" EntityType="SachOnlineDataModel.KHACHHANG" />
+    <EntitySet Name="MENUs" EntityType="SachOnlineDataModel.MENU" />
+    <EntitySet Name="NHAXUATBANs" EntityType="SachOnlineDataModel.NHAXUATBAN" />
+    <EntitySet Name="SACHes" EntityType="SachOnlineDataModel.SACH" />
+    <EntitySet Name="sysdiagrams" EntityType="SachOnlineDataModel.sysdiagram" />
+    <EntitySet Name="TACGIAs" EntityType="SachOnlineDataModel.TACGIA" />
+    <EntitySet Name="TRANGTINs" EntityType="SachOnlineDataModel.TRANGTIN" />
+    <EntitySet Name="VIETSACHes" EntityType="SachOnlineDataModel.VIETSACH" />
+    <AssociationSet Name="FK_CTDH_DDH" Association="SachOnlineDataModel.FK_CTDH_DDH">
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+      <End Role="CHITIETDATHANG" EntitySet="CHITIETDATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTDH_S" Association="SachOnlineDataModel.FK_CTDH_S">
+      <End Role="SACH" EntitySet="SACHes" />
+      <End Role="CHITIETDATHANG" EntitySet="CHITIETDATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_S_CD" Association="SachOnlineDataModel.FK_S_CD">
+      <End Role="CHUDE" EntitySet="CHUDEs" />
+      <End Role="SACH" EntitySet="SACHes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DDH_KH" Association="SachOnlineDataModel.FK_DDH_KH">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sach_NXB" Association="SachOnlineDataModel.FK_Sach_NXB">
+      <End Role="NHAXUATBAN" EntitySet="NHAXUATBANs" />
+      <End Role="SACH" EntitySet="SACHes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VS_S" Association="SachOnlineDataModel.FK_VS_S">
+      <End Role="SACH" EntitySet="SACHes" />
+      <End Role="VIETSACH" EntitySet="VIETSACHes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VS_TG" Association="SachOnlineDataModel.FK_VS_TG">
+      <End Role="TACGIA" EntitySet="TACGIAs" />
+      <End Role="VIETSACH" EntitySet="VIETSACHes" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="MaAd" />
+    </Key>
+    <Property Name="MaAd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TenDN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Quyen" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CHITIETDATHANG">
+    <Key>
+      <PropertyRef Name="MaDonHang" />
+      <PropertyRef Name="MaSach" />
+    </Key>
+    <Property Name="MaDonHang" Type="Int32" Nullable="false" />
+    <Property Name="MaSach" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="DonGia" Type="Decimal" Precision="9" Scale="2" />
+    <NavigationProperty Name="DONDATHANG" Relationship="SachOnlineDataModel.FK_CTDH_DDH" FromRole="CHITIETDATHANG" ToRole="DONDATHANG" />
+    <NavigationProperty Name="SACH" Relationship="SachOnlineDataModel.FK_CTDH_S" FromRole="CHITIETDATHANG" ToRole="SACH" />
+  </EntityType>
+  <EntityType Name="CHUDE">
+    <Key>
+      <PropertyRef Name="MaCD" />
+    </Key>
+    <Property Name="MaCD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenChuDe" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SACHes" Relationship="SachOnlineDataModel.FK_S_CD" FromRole="CHUDE" ToRole="SACH" />
+  </EntityType>
+  <EntityType Name="DONDATHANG">
+    <Key>
+      <PropertyRef Name="MaDonHang" />
+    </Key>
+    <Property Name="MaDonHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DaThanhToan" Type="Boolean" />
+    <Property Name="TinhTrangGiaoHang" Type="Int32" />
+    <Property Name="NgayDat" Type="DateTime" Precision="0" />
+    <Property Name="NgayGiao" Type="DateTime" Precision="0" />
+    <Property Name="MaKH" Type="Int32" />
+    <NavigationProperty Name="CHITIETDATHANGs" Relationship="SachOnlineDataModel.FK_CTDH_DDH" FromRole="DONDATHANG" ToRole="CHITIETDATHANG" />
+    <NavigationProperty Name="KHACHHANG" Relationship="SachOnlineDataModel.FK_DDH_KH" FromRole="DONDATHANG" ToRole="KHACHHANG" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTen" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TaiKhoan" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="DONDATHANGs" Relationship="SachOnlineDataModel.FK_DDH_KH" FromRole="KHACHHANG" ToRole="DONDATHANG" />
+  </EntityType>
+  <EntityType Name="MENU">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MenuLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="OrderNumber" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NHAXUATBAN">
+    <Key>
+      <PropertyRef Name="MaNXB" />
+    </Key>
+    <Property Name="MaNXB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNXB" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SACHes" Relationship="SachOnlineDataModel.FK_Sach_NXB" FromRole="NHAXUATBAN" ToRole="SACH" />
+  </EntityType>
+  <EntityType Name="SACH">
+    <Key>
+      <PropertyRef Name="MaSach" />
+    </Key>
+    <Property Name="MaSach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenSach" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AnhBia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="0" />
+    <Property Name="SoLuongBan" Type="Int32" />
+    <Property Name="GiaBan" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MaCD" Type="Int32" />
+    <Property Name="MaNXB" Type="Int32" />
+    <NavigationProperty Name="CHITIETDATHANGs" Relationship="SachOnlineDataModel.FK_CTDH_S" FromRole="SACH" ToRole="CHITIETDATHANG" />
+    <NavigationProperty Name="CHUDE" Relationship="SachOnlineDataModel.FK_S_CD" FromRole="SACH" ToRole="CHUDE" />
+    <NavigationProperty Name="NHAXUATBAN" Relationship="SachOnlineDataModel.FK_Sach_NXB" FromRole="SACH" ToRole="NHAXUATBAN" />
+    <NavigationProperty Name="VIETSACHes" Relationship="SachOnlineDataModel.FK_VS_S" FromRole="SACH" ToRole="VIETSACH" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TACGIA">
+    <Key>
+      <PropertyRef Name="MaTG" />
+    </Key>
+    <Property Name="MaTG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenTG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TieuSu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="VIETSACHes" Relationship="SachOnlineDataModel.FK_VS_TG" FromRole="TACGIA" ToRole="VIETSACH" />
+  </EntityType>
+  <EntityType Name="TRANGTIN">
+    <Key>
+      <PropertyRef Name="MaTT" />
+    </Key>
+    <Property Name="MaTT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenTrang" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="MetaTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VIETSACH">
+    <Key>
+      <PropertyRef Name="MaTG" />
+      <PropertyRef Name="MaSach" />
+    </Key>
+    <Property Name="MaTG" Type="Int32" Nullable="false" />
+    <Property Name="MaSach" Type="Int32" Nullable="false" />
+    <Property Name="VaiTro" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ViTri" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SACH" Relationship="SachOnlineDataModel.FK_VS_S" FromRole="VIETSACH" ToRole="SACH" />
+    <NavigationProperty Name="TACGIA" Relationship="SachOnlineDataModel.FK_VS_TG" FromRole="VIETSACH" ToRole="TACGIA" />
+  </EntityType>
+  <Association Name="FK_CTDH_DDH">
+    <End Type="SachOnlineDataModel.DONDATHANG" Role="DONDATHANG" Multiplicity="1" />
+    <End Type="SachOnlineDataModel.CHITIETDATHANG" Role="CHITIETDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONDATHANG">
+        <PropertyRef Name="MaDonHang" />
+      </Principal>
+      <Dependent Role="CHITIETDATHANG">
+        <PropertyRef Name="MaDonHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTDH_S">
+    <End Type="SachOnlineDataModel.SACH" Role="SACH" Multiplicity="1" />
+    <End Type="SachOnlineDataModel.CHITIETDATHANG" Role="CHITIETDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SACH">
+        <PropertyRef Name="MaSach" />
+      </Principal>
+      <Dependent Role="CHITIETDATHANG">
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_S_CD">
+    <End Type="SachOnlineDataModel.CHUDE" Role="CHUDE" Multiplicity="0..1" />
+    <End Type="SachOnlineDataModel.SACH" Role="SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHUDE">
+        <PropertyRef Name="MaCD" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="MaCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DDH_KH">
+    <End Type="SachOnlineDataModel.KHACHHANG" Role="KHACHHANG" Multiplicity="0..1" />
+    <End Type="SachOnlineDataModel.DONDATHANG" Role="DONDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="DONDATHANG">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sach_NXB">
+    <End Type="SachOnlineDataModel.NHAXUATBAN" Role="NHAXUATBAN" Multiplicity="0..1" />
+    <End Type="SachOnlineDataModel.SACH" Role="SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAXUATBAN">
+        <PropertyRef Name="MaNXB" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="MaNXB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VS_S">
+    <End Type="SachOnlineDataModel.SACH" Role="SACH" Multiplicity="1" />
+    <End Type="SachOnlineDataModel.VIETSACH" Role="VIETSACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SACH">
+        <PropertyRef Name="MaSach" />
+      </Principal>
+      <Dependent Role="VIETSACH">
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VS_TG">
+    <End Type="SachOnlineDataModel.TACGIA" Role="TACGIA" Multiplicity="1" />
+    <End Type="SachOnlineDataModel.VIETSACH" Role="VIETSACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TACGIA">
+        <PropertyRef Name="MaTG" />
+      </Principal>
+      <Dependent Role="VIETSACH">
+        <PropertyRef Name="MaTG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

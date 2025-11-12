@@ -1,0 +1,45 @@
+@model NguyenHongKhanh.SachOnline.Models.NHAXUATBAN
+
+@{
+    ViewBag.Title = "Chi tiết nhà xuất bản";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">CHI TIẾT NHÀ XUẤT BẢN</h2>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">@Model.TenNXB</h3>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Mã nhà xuất bản:</dt>
+            <dd>@Model.MaNXB</dd>
+
+            <dt>Tên nhà xuất bản:</dt>
+            <dd>@Model.TenNXB</dd>
+
+            <dt>Địa chỉ:</dt>
+            <dd>@(String.IsNullOrEmpty(Model.DiaChi) ? "Chưa cập nhật" : Model.DiaChi)</dd>
+
+            <dt>Điện thoại:</dt>
+            <dd>@(String.IsNullOrEmpty(Model.DienThoai) ? "Chưa cập nhật" : Model.DienThoai)</dd>
+
+            <dt>Số lượng sách:</dt>
+            <dd>@(Model.SACHes != null ? Model.SACHes.Count() : 0) cuốn</dd>
+        </dl>
+    </div>
+    <div class="panel-footer">
+        <a href="@Url.Action("Edit", new { id = Model.MaNXB })" class="btn btn-warning">
+            <i class="glyphicon glyphicon-pencil"></i> Chỉnh sửa
+        </a>
+        <a href="@Url.Action("Delete", new { id = Model.MaNXB })" class="btn btn-danger">
+            <i class="glyphicon glyphicon-trash"></i> Xóa
+        </a>
+        @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-default" })
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

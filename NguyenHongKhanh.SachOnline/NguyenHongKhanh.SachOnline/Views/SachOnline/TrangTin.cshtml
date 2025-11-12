@@ -1,0 +1,53 @@
+@model NguyenHongKhanh.SachOnline.Models.TRANGTIN
+@{
+    ViewBag.Title = Model.TenTrang;
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>@Model.TenTrang</h2>
+            <h5>
+                <i class="glyphicon glyphicon-calendar"></i>
+                Ngày đăng: @Html.FormatValue(@Model.NgayTao, "{0:dd/MM/yyyy}")
+            </h5>
+            <hr />
+
+            <div class="trang-tin-noi-dung">
+                @Html.Raw(Model.NoiDung)
+            </div>
+
+            <br /><br />
+
+            <p>
+                <a href="@Url.Action("Index", "SachOnline")" class="btn btn-default">
+                    <i class="glyphicon glyphicon-arrow-left"></i> Quay lại trang chủ
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .trang-tin-noi-dung {
+        line-height: 1.8;
+        text-align: justify;
+    }
+    .trang-tin-noi-dung img {
+        max-width: 100%;
+        height: auto;
+        margin: 15px 0;
+    }
+    .trang-tin-noi-dung h2,
+    .trang-tin-noi-dung h3,
+    .trang-tin-noi-dung h4 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .trang-tin-noi-dung ul,
+    .trang-tin-noi-dung ol {
+        margin: 10px 0;
+        padding-left: 40px;
+    }
+</style>
