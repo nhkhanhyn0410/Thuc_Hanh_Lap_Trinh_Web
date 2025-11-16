@@ -1,74 +1,94 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\",
+  "WorkspaceRootPath": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\views\\trangtin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\views\\trangtin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\views\\donhang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\views\\donhang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\views\\sach\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|e:\\thuc_hanh_lap_trinh_web\\nguyenhongkhanh.sachonline\\nguyenhongkhanh.sachonline\\areas\\admin\\views\\sach\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\views\\sach\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\sachonline\\trangtin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\trangtin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\sachonline\\navpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\navpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|c:\\users\\admin\\source\\repos\\thuc_hanh_lap_trinh_web\\nguyenhongkhanh.sachonline\\nguyenhongkhanh.sachonline\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\sachonline\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\models\\modelsachonline.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\models\\modelsachonline.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|c:\\users\\admin\\source\\repos\\thuc_hanh_lap_trinh_web\\nguyenhongkhanh.sachonline\\nguyenhongkhanh.sachonline\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\sachonline\\loadchildmenu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\loadchildmenu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\controllers\\trangtincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\controllers\\trangtincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\controllers\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\controllers\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\controllers\\sachonlinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\controllers\\sachonlinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\views\\trangtin\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\views\\trangtin\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\views\\trangtin\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\views\\trangtin\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\views\\trangtin\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\views\\trangtin\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\models\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\views\\chude\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\views\\chude\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\views\\chude\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\views\\chude\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\controllers\\chudecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\controllers\\chudecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\sachonline\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\models\\modelsachonline.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\models\\modelsachonline.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\sachonline\\trangtin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\trangtin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\sachonline\\navpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\navpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\views\\sachonline\\loadchildmenu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\views\\sachonline\\loadchildmenu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\controllers\\trangtincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\controllers\\trangtincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\areas\\admin\\controllers\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\areas\\admin\\controllers\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\controllers\\sachonlinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\controllers\\sachonlinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\nguyenhongkhanh.sachonline\\models\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85774968-342C-43C6-A9CA-6B6411F3B4EA}|NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.csproj|solutionrelative:nguyenhongkhanh.sachonline\\models\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +98,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,19 +106,215 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\DonHang\\Index.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\DonHang\\Index.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\DonHang\\Index.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\DonHang\\Index.cshtml",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAAPUBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-16T07:24:39.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\ChuDe\\Index.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\ChuDe\\Index.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\ChuDe\\Index.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\ChuDe\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-16T06:59:44.802Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\ChuDe\\Edit.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\ChuDe\\Edit.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\ChuDe\\Edit.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\ChuDe\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-16T06:59:44.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ChuDeController.cs",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\ChuDeController.cs",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\ChuDeController.cs",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\ChuDeController.cs",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\ChuDeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T06:55:32.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SachOnlineController.cs",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Controllers\\SachOnlineController.cs",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Controllers\\SachOnlineController.cs",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Controllers\\SachOnlineController.cs",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Controllers\\SachOnlineController.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAADwv4IAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T00:43:46.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NavPartial.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NavPartial.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NavPartial.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NavPartial.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NavPartial.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAswDsAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T00:41:38.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Index.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Index.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Index.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T00:40:11.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Edit.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Edit.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Edit.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T00:40:08.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Delete.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Delete.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Delete.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T00:40:02.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\Index.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\Index.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\Index.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T00:18:40.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Sach\\Index.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Sach\\Index.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Sach\\Index.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Sach\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T00:21:46.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T00:21:28.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TrangTin.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\TrangTin.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\TrangTin.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\TrangTin.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\TrangTin.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T00:45:15.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "modelSachOnline.edmx [Diagram1]",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Models\\modelSachOnline.edmx",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Models\\modelSachOnline.edmx",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Models\\modelSachOnline.edmx [Diagram1]",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Models\\modelSachOnline.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-11-12T00:05:58.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-16T06:46:34.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\App_Start\\RouteConfig.cs",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T00:49:07.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Web.config",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Web.config",
               "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Web.config",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Web.config",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Web.config",
               "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Web.config",
               "ViewState": "AgIAABUAAAAAAAAAAAAAAEkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -107,161 +323,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RouteConfig.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\App_Start\\RouteConfig.cs",
-              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\App_Start\\RouteConfig.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\App_Start\\RouteConfig.cs",
-              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\App_Start\\RouteConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T00:49:07.411Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TrangTin.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\TrangTin.cshtml",
-              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\TrangTin.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\TrangTin.cshtml",
-              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\TrangTin.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T00:45:15.498Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "SachOnlineController.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Controllers\\SachOnlineController.cs",
-              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Controllers\\SachOnlineController.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Controllers\\SachOnlineController.cs",
-              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Controllers\\SachOnlineController.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAADwv4IAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T00:43:46.206Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NavPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NavPartial.cshtml",
-              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NavPartial.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NavPartial.cshtml",
-              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\NavPartial.cshtml",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAswDsAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T00:41:38.74Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Index.cshtml",
-              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Index.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Index.cshtml",
-              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T00:40:11.436Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Edit.cshtml",
-              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Edit.cshtml",
-              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Edit.cshtml",
+              "DocumentIndex": 21,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Create.cshtml",
+              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Create.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Create.cshtml",
+              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T00:40:08.63Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Delete.cshtml",
-              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Delete.cshtml",
-              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T00:40:02.04Z"
+              "WhenOpened": "2025-11-12T00:39:57.71Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Create.cshtml",
-              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Create.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Create.cshtml",
-              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\TrangTin\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T00:39:57.71Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Sach\\Index.cshtml",
-              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Sach\\Index.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Sach\\Index.cshtml",
-              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Sach\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T00:21:46.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "_LayoutAdmin.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T00:21:28.573Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "modelSachOnline.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Models\\modelSachOnline.edmx",
-              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Models\\modelSachOnline.edmx",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Models\\modelSachOnline.edmx [Diagram1]",
-              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Models\\modelSachOnline.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2025-11-12T00:05:58.516Z",
-              "EditorCaption": " [Diagram1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\Index.cshtml",
-              "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\Index.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\Index.cshtml",
-              "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T00:18:40.867Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "LoadChildMenu.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\LoadChildMenu.cshtml",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\LoadChildMenu.cshtml",
               "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\LoadChildMenu.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\LoadChildMenu.cshtml",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Views\\SachOnline\\LoadChildMenu.cshtml",
               "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Views\\SachOnline\\LoadChildMenu.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -269,11 +348,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "String.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\String.cs",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\String.cs",
               "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\String.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\String.cs",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\String.cs",
               "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\String.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -281,11 +360,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "TrangTinController.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\TrangTinController.cs",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\TrangTinController.cs",
               "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\TrangTinController.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\TrangTinController.cs",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\TrangTinController.cs",
               "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Areas\\Admin\\Controllers\\TrangTinController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -293,11 +372,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "GioHang.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Models\\GioHang.cs",
+              "DocumentMoniker": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Models\\GioHang.cs",
               "RelativeDocumentMoniker": "NguyenHongKhanh.SachOnline\\Models\\GioHang.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Models\\GioHang.cs",
+              "ToolTip": "E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline\\Models\\GioHang.cs",
               "RelativeToolTip": "NguyenHongKhanh.SachOnline\\Models\\GioHang.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

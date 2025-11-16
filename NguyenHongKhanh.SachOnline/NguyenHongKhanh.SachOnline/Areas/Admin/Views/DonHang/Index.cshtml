@@ -1,0 +1,502 @@
+@{
+    ViewBag.Title = "Quản lý Đơn Hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center; color:#337ab7;">
+    <i class="fa fa-shopping-cart"></i> QUẢN LÝ ĐƠN HÀNG
+</h2>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover" id="tblDonHang">
+        <thead style="background-color:#337ab7; color:white;">
+            <tr>
+                <th style="text-align:center; width:8%;">Mã ĐH</th>
+                <th style="text-align:center; width:18%;">Khách hàng</th>
+                <th style="text-align:center; width:12%;">Ngày đặt</th>
+                <th style="text-align:center; width:12%;">Ngày giao</th>
+                <th style="text-align:center; width:13%;">Thanh toán</th>
+                <th style="text-align:center; width:13%;">Giao hàng</th>
+                <th style="text-align:center; width:24%;">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody id="tbodyDonHang">
+            <tr>
+                <td colspan="7" style="text-align:center;">
+                    <i class="fa fa-spinner fa-spin"></i> Đang tải dữ liệu...
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="text-center" id="pagination">
+    <ul class="pagination" id="paginationList"></ul>
+</div>
+
+<!-- Modal Details -->
+<div class="modal fade" id="modalDetails" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#337ab7; color:white;">
+                <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+                <h4 class="modal-title">
+                    <i class="fa fa-info-circle"></i> Chi tiết Đơn hàng
+                </h4>
+            </div>
+            <div class="modal-body">
+                <h4>Thông tin đơn hàng</h4>
+                <dl class="dl-horizontal">
+                    <dt>Mã đơn hàng:</dt>
+                    <dd id="detailMaDonHang"></dd>
+
+                    <dt>Khách hàng:</dt>
+                    <dd id="detailTenKH"></dd>
+
+                    <dt>Địa chỉ:</dt>
+                    <dd id="detailDiaChi"></dd>
+
+                    <dt>Điện thoại:</dt>
+                    <dd id="detailDienThoai"></dd>
+
+                    <dt>Ngày đặt:</dt>
+                    <dd id="detailNgayDat"></dd>
+
+                    <dt>Ngày giao:</dt>
+                    <dd id="detailNgayGiao"></dd>
+
+                    <dt>Thanh toán:</dt>
+                    <dd id="detailThanhToan"></dd>
+
+                    <dt>Tình trạng:</dt>
+                    <dd id="detailTinhTrang"></dd>
+                </dl>
+
+                <hr />
+                <h4>Chi tiết sản phẩm</h4>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr style="background-color:#f5f5f5;">
+                            <th>Tên sách</th>
+                            <th style="text-align:center; width:100px;">Số lượng</th>
+                            <th style="text-align:right; width:120px;">Đơn giá</th>
+                            <th style="text-align:right; width:120px;">Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody id="detailChiTiet"></tbody>
+                    <tfoot>
+                        <tr style="font-weight:bold; background-color:#f9f9f9;">
+                            <td colspan="3" style="text-align:right;">Tổng cộng:</td>
+                            <td id="detailTongTien" style="text-align:right; color:#d9534f;"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Edit -->
+<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#f0ad4e; color:white;">
+                <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+                <h4 class="modal-title">
+                    <i class="fa fa-edit"></i> Cập nhật Đơn hàng
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="formDonHang">
+                    <input type="hidden" id="hdMaDonHang" />
+
+                    <div class="form-group">
+                        <label>Khách hàng:</label>
+                        <input type="text" class="form-control" id="txtTenKH" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Thanh toán:</label>
+                        <select class="form-control" id="ddlThanhToan">
+                            <option value="false">Chưa thanh toán</option>
+                            <option value="true">Đã thanh toán</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tình trạng giao hàng:</label>
+                        <select class="form-control" id="ddlTinhTrang">
+                            <option value="0">Chưa duyệt</option>
+                            <option value="1">Đang chuẩn bị hàng</option>
+                            <option value="2">Đang vận chuyển</option>
+                            <option value="3">Đang giao</option>
+                            <option value="4">Đã giao</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ngày giao:</label>
+                        <input type="date" class="form-control" id="txtNgayGiao" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-warning" id="btnUpdate">
+                    <i class="fa fa-save"></i> Cập nhật
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script {
+<script type="text/javascript">
+    var currentPage = 1;
+    var pageSize = 10;
+
+    function escapeHtml(text) {
+        if (text === null || text === undefined) return '';
+        var map = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;',
+            '/': '&#x2F;',
+            '`': '&#x60;'
+        };
+        return String(text).replace(/[&<>"'`\/]/g, function (m) { return map[m]; });
+    }
+
+    function getTrangThaiThanhToan(daThanhToan) {
+        if (daThanhToan) {
+            return '<span class="label label-success">Đã thanh toán</span>';
+        } else {
+            return '<span class="label label-warning">Chưa thanh toán</span>';
+        }
+    }
+
+    function getTrangThaiGiaoHang(tinhTrang) {
+        switch (tinhTrang) {
+            case 0: return '<span class="label label-info">Chưa duyệt</span>';
+            case 1: return '<span class="label label-primary">Đang chuẩn bị hàng</span>';
+            case 2: return '<span class="label label-success">Đang vận chuyển</span>';
+            case 3: return '<span class="label label-success">Đang giao</span>';
+            case 4: return '<span class="label label-success">Đã giao</span>';
+            default: return '<span class="label label-default">Không xác định</span>';
+        }
+    }
+
+    function getTrangThaiText(tinhTrang) {
+        switch (tinhTrang) {
+            case 0: return 'Chưa duyệt';
+            case 1: return 'Đang chuẩn bị hàng';
+            case 2: return 'Đang vận chuyển';
+            case 3: return 'Đang giao';
+            case 4: return 'Đã giao';
+            default: return 'Không xác định';
+        }
+    }
+
+    $(document).ready(function () {
+        loadDonHang(1);
+
+        $('#btnUpdate').click(function () {
+            updateDonHang();
+        });
+
+        $('#tbodyDonHang').on('click', '.btn-view', function () {
+            var id = $(this).data('id');
+            showDetails(id);
+        });
+
+        $('#tbodyDonHang').on('click', '.btn-edit', function () {
+            var id = $(this).data('id');
+            editDonHang(id);
+        });
+
+        $('#tbodyDonHang').on('click', '.btn-delete', function () {
+            var id = $(this).data('id');
+            deleteDonHang(id);
+        });
+    });
+
+    function loadDonHang(page) {
+        currentPage = page;
+        $.ajax({
+            url: '@Url.Action("GetListDonHang", "DonHang", new { area = "Admin" })',
+            type: 'GET',
+            dataType: 'json',
+            data: { page: page, pageSize: pageSize },
+            success: function (response) {
+                if (response.success) {
+                    renderTable(response.data);
+                    renderPagination(response.currentPage, response.totalPages);
+                } else {
+                    alert('Lỗi: ' + response.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('LoadDonHang error:', xhr.responseText);
+                $('#tbodyDonHang').html('<tr><td colspan="7" style="text-align:center; color:red;">Lỗi tải dữ liệu!</td></tr>');
+            }
+        });
+    }
+
+    function renderTable(data) {
+        var html = '';
+        if (!data || data.length === 0) {
+            html = '<tr><td colspan="7" style="text-align:center;">Chưa có dữ liệu</td></tr>';
+        } else {
+            $.each(data, function (index, item) {
+                html += '<tr>';
+                html += '<td style="text-align:center;">' + item.MaDonHang + '</td>';
+                html += '<td>' + escapeHtml(item.TenKhachHang) + '</td>';
+                html += '<td style="text-align:center;">' + (item.NgayDatDisplay || '') + '</td>';
+                html += '<td style="text-align:center;">' + (item.NgayGiaoDisplay || 'Chưa giao') + '</td>';
+                html += '<td style="text-align:center;">' + getTrangThaiThanhToan(item.DaThanhToan) + '</td>';
+                html += '<td style="text-align:center;">' + getTrangThaiGiaoHang(item.TinhTrangGiaoHang || 0) + '</td>';
+                html += '<td style="text-align:center;">';
+                html += '<button type="button" class="btn btn-warning btn-sm btn-edit" data-id="' + item.MaDonHang + '" title="Sửa"><i class="fa fa-edit"></i> Sửa</button> ';
+                html += '<button type="button" class="btn btn-info btn-sm btn-view" data-id="' + item.MaDonHang + '" title="Chi tiết"><i class="fa fa-eye"></i> Chi tiết</button> ';
+                html += '<button type="button" class="btn btn-danger btn-sm btn-delete" data-id="' + item.MaDonHang + '" title="Xóa"><i class="fa fa-trash"></i> Xóa</button>';
+                html += '</td>';
+                html += '</tr>';
+            });
+        }
+        $('#tbodyDonHang').html(html);
+    }
+
+    function renderPagination(currentPage, totalPages) {
+        var html = '';
+        if (currentPage > 1) {
+            html += '<li><a href="javascript:void(0)" onclick="loadDonHang(' + (currentPage - 1) + ')">«</a></li>';
+        } else {
+            html += '<li class="disabled"><span>«</span></li>';
+        }
+
+        for (var i = 1; i <= totalPages; i++) {
+            if (i === currentPage) {
+                html += '<li class="active"><span>' + i + '</span></li>';
+            } else {
+                html += '<li><a href="javascript:void(0)" onclick="loadDonHang(' + i + ')">' + i + '</a></li>';
+            }
+        }
+        if (currentPage < totalPages) {
+            html += '<li><a href="javascript:void(0)" onclick="loadDonHang(' + (currentPage + 1) + ')">»</a></li>';
+        } else {
+            html += '<li class="disabled"><span>»</span></li>';
+        }
+
+        $('#paginationList').html(html);
+    }
+
+    function showDetails(maDonHang) {
+        $.ajax({
+            url: '@Url.Action("Details", "DonHang", new { area = "Admin" })',
+            type: 'GET',
+            dataType: 'json',
+            data: { id: maDonHang },
+            success: function (response) {
+                if (response.success) {
+                    var item = response.data;
+                    $('#detailMaDonHang').text(item.MaDonHang);
+                    $('#detailTenKH').text(item.TenKhachHang);
+                    $('#detailDiaChi').text(item.DiaChiKH || 'Không có');
+                    $('#detailDienThoai').text(item.DienThoaiKH || 'Không có');
+                    $('#detailNgayDat').text(item.NgayDatDisplay || 'Không có');
+                    $('#detailNgayGiao').text(item.NgayGiaoDisplay || 'Chưa giao');
+                    $('#detailThanhToan').html(getTrangThaiThanhToan(item.DaThanhToan));
+                    $('#detailTinhTrang').text(getTrangThaiText(item.TinhTrangGiaoHang));
+
+                    var htmlChiTiet = '';
+                    if (item.ChiTiet && item.ChiTiet.length > 0) {
+                        $.each(item.ChiTiet, function (i, ct) {
+                            htmlChiTiet += '<tr>';
+                            htmlChiTiet += '<td>' + escapeHtml(ct.TenSach) + '</td>';
+                            htmlChiTiet += '<td style="text-align:center;">' + ct.SoLuong + '</td>';
+                            htmlChiTiet += '<td style="text-align:right;">' + (ct.DonGia || 0).toLocaleString('vi-VN') + ' đ</td>';
+                            htmlChiTiet += '<td style="text-align:right;">' + ct.ThanhTien.toLocaleString('vi-VN') + ' đ</td>';
+                            htmlChiTiet += '</tr>';
+                        });
+                    } else {
+                        htmlChiTiet = '<tr><td colspan="4" style="text-align:center;">Không có sản phẩm</td></tr>';
+                    }
+                    $('#detailChiTiet').html(htmlChiTiet);
+                    $('#detailTongTien').text((item.TongTien || 0).toLocaleString('vi-VN') + ' đ');
+
+                    $('#modalDetails').modal('show');
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Details error:', xhr.responseText);
+                alert('Có lỗi xảy ra!');
+            }
+        });
+    }
+
+    function editDonHang(maDonHang) {
+        $.ajax({
+            url: '@Url.Action("Details", "DonHang", new { area = "Admin" })',
+            type: 'GET',
+            dataType: 'json',
+            data: { id: maDonHang },
+            success: function (response) {
+                if (response.success) {
+                    var item = response.data;
+                    $('#hdMaDonHang').val(item.MaDonHang);
+                    $('#txtTenKH').val(item.TenKhachHang);
+                    $('#ddlThanhToan').val(item.DaThanhToan.toString());
+                    $('#ddlTinhTrang').val(item.TinhTrangGiaoHang.toString());
+                    $('#txtNgayGiao').val(item.NgayGiao || '');
+
+                    $('#modalEdit').modal('show');
+                } else {
+                    alert('Lỗi: ' + response.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Edit error:', xhr.responseText);
+                alert('Có lỗi xảy ra: ' + error);
+            }
+        });
+    }
+
+    function updateDonHang() {
+        var maDonHang = $('#hdMaDonHang').val();
+        var daThanhToan = $('#ddlThanhToan').val() === 'true';
+        var tinhTrangGiaoHang = parseInt($('#ddlTinhTrang').val());
+        var ngayGiao = $('#txtNgayGiao').val();
+
+        $.ajax({
+            url: '@Url.Action("Update", "DonHang", new { area = "Admin" })',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                maDonHang: parseInt(maDonHang),
+                daThanhToan: daThanhToan,
+                tinhTrangGiaoHang: tinhTrangGiaoHang,
+                ngayGiao: ngayGiao
+            },
+            success: function (response) {
+                if (response.success) {
+                    alert(response.message);
+                    $('#modalEdit').modal('hide');
+                    loadDonHang(currentPage);
+                } else {
+                    alert('Lỗi: ' + response.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Update error:', xhr.responseText);
+                alert('Có lỗi xảy ra: ' + error);
+            }
+        });
+    }
+
+    function deleteDonHang(maDonHang) {
+        var confirmResult = confirm('Bạn có chắc chắn muốn xóa đơn hàng #' + maDonHang + ' không?');
+
+        if (!confirmResult) {
+            return; // Dừng lại nếu người dùng bấm Cancel
+        }
+
+        $.ajax({
+            url: '@Url.Action("Delete", "DonHang", new { area = "Admin" })',
+            type: 'POST',
+            dataType: 'json',
+            data: { id: maDonHang },
+            success: function (response) {
+                if (response.success) {
+                    alert(response.message);
+                    loadDonHang(currentPage);
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Delete error:', xhr.responseText);
+                alert('Có lỗi xảy ra!');
+            }
+        });
+    }
+</script>
+
+<style>
+    .pagination {
+        display: inline-flex;
+        padding-left: 0;
+        border-radius: 4px;
+    }
+
+        .pagination li {
+            list-style: none;
+            margin: 0 2px;
+        }
+
+            .pagination li a, .pagination li span {
+                padding: 6px 12px;
+                border: 1px solid #ddd;
+                background-color: #fff;
+                color: #337ab7;
+                text-decoration: none;
+                display: block;
+            }
+
+                .pagination li a:hover {
+                    background-color: #337ab7;
+                    color: white;
+                    border-color: #337ab7;
+                }
+
+        .pagination .active span {
+            background-color: #337ab7;
+            color: white;
+            border-color: #337ab7;
+        }
+
+        .pagination .disabled span {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+    .label {
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 3px;
+    }
+
+    .label-success {
+        background-color: #5cb85c;
+        color: white;
+    }
+
+    .label-warning {
+        background-color: #f0ad4e;
+        color: white;
+    }
+
+    .label-info {
+        background-color: #5bc0de;
+        color: white;
+    }
+
+    .label-primary {
+        background-color: #337ab7;
+        color: white;
+    }
+
+    .label-default {
+        background-color: #777;
+        color: white;
+    }
+</style>
+}

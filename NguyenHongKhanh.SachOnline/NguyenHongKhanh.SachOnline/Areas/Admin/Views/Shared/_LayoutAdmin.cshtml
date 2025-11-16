@@ -14,6 +14,9 @@
     <!-- CKEditor -->
     <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 
+    <!-- Font Aswéon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style type="text/css">
         .imgbook {
             transition: all 1s ease-in;
@@ -66,7 +69,7 @@
             <p>ADMIN</p>
         </div>
     </footer>
-
+    @RenderSection("script", required: false)
     @RenderSection("Scripts", required: false)
 </body>
 </html>

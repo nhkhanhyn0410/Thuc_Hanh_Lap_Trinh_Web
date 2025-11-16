@@ -1,0 +1,295 @@
+@{
+    ViewBag.Title = "Quản lý Trang tin";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .btn-success {
+        margin-bottom: 15px;
+    }
+
+    .table thead th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+    }
+
+    .action-buttons button {
+        margin-right: 5px;
+    }
+
+    .content-preview {
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+</style>
+
+<div class="container-fluid">
+    <h2>@ViewBag.Title</h2>
+    <hr />
+
+    <button class="btn btn-success" id="btnAdd">
+        <i class="fa fa-plus" aria-hidden="true"></i> Thêm Trang Tin
+    </button>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th class="col-md-3">Tên Trang</th>
+                <th class="col-md-5">Nội Dung</th>
+                <th class="col-md-2">Ngày Tạo</th>
+                <th class="col-md-2 text-right">Các chức năng</th>
+            </tr>
+        </thead>
+        <tbody id="tblDsTrangTin">
+            <!-- Dữ liệu sẽ được load bằng AJAX -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal cho Chi tiết/Thêm/Sửa -->
+<div class="modal fade" id="modalTT" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="maTT" value="" />
+                <div class="form-group">
+                    <label for="txtTenTrang">Tên trang <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="txtTenTrang" placeholder="Nhập tên trang" />
+                </div>
+                <div class="form-group">
+                    <label for="txtNoiDung">Nội dung</label>
+                    <textarea class="form-control" id="txtNoiDung" rows="10" placeholder="Nhập nội dung"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" id="btnSubmit">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script{
+    <script>
+        // ==================== Document Ready ====================
+        $(document).ready(function () {
+            LoadDsTrangTin();
+        });
+
+        // ==================== Hàm Load Danh Sách ====================
+        function LoadDsTrangTin() {
+            $.ajax({
+                url: '/Admin/TrangTin/DsTrangTin',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.code == 200) {
+                        $('#tblDsTrangTin').empty();
+
+                        if (data.dsTT.length === 0) {
+                            $('#tblDsTrangTin').append('<tr><td colspan="4" class="text-center">Chưa có dữ liệu</td></tr>');
+                            return;
+                        }
+
+                        $.each(data.dsTT, function (i, v) {
+                            let ngayTao = v.NgayTao ? new Date(v.NgayTao).toLocaleDateString('vi-VN') : '';
+                            // Strip HTML tags for preview
+                            let noiDungPreview = v.NoiDung ? v.NoiDung.replace(/<[^>]*>/g, '').substring(0, 100) + '...' : '';
+                            let s = '<tr id="' + v.MaTT + '">';
+                            s += '<td>' + v.TenTrang + '</td>';
+                            s += '<td class="content-preview" title="' + noiDungPreview + '">' + noiDungPreview + '</td>';
+                            s += '<td>' + ngayTao + '</td>';
+                            s += '<td class="text-right action-buttons">';
+                            s += '<button class="btn btn-sm btn-info" name="view" title="Xem chi tiết">';
+                            s += '<i class="fa fa-info-circle" aria-hidden="true"></i></button>';
+                            s += '<button class="btn btn-sm btn-warning" name="update" title="Chỉnh sửa">';
+                            s += '<i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>';
+                            s += '<button class="btn btn-sm btn-danger" name="delete" title="Xóa">';
+                            s += '<i class="fa fa-trash" aria-hidden="true"></i></button>';
+                            s += '</td>';
+                            s += '</tr>';
+                            $('#tblDsTrangTin').append(s);
+                        });
+                    } else {
+                        alert(data.msg);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert('Lỗi khi tải danh sách: ' + error);
+                }
+            });
+        }
+
+        // ==================== Xem Chi Tiết ====================
+        $(document).on('click', "button[name='view']", function () {
+            let idTT = $(this).closest('tr').attr('id');
+            $.ajax({
+                url: '/Admin/TrangTin/DetailAjax',
+                type: 'GET',
+                data: { maTT: idTT },
+                success: function (data) {
+                    if (data.code == 200) {
+                        $('#txtTenTrang').val(data.tt.TenTrang);
+                        $('#txtNoiDung').val(data.tt.NoiDung);
+                        $('#txtTenTrang').prop('readonly', true);
+                        $('#txtNoiDung').prop('readonly', true);
+                        $('#btnSubmit').hide();
+                        $('#modalTitle').text('Xem chi tiết Trang tin');
+                        $('#modalTT').modal('show');
+                    } else {
+                        alert(data.msg);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert('Lỗi khi lấy thông tin: ' + error);
+                }
+            });
+        });
+
+        // ==================== Thêm Mới ====================
+        $('#btnAdd').click(function () {
+            $('#modalTitle').text('Thêm mới Trang tin');
+            $('#maTT').val('');
+            $('#txtTenTrang').val('');
+            $('#txtNoiDung').val('');
+            $('#txtTenTrang').prop('readonly', false);
+            $('#txtNoiDung').prop('readonly', false);
+            $('#btnSubmit').show();
+            $('#modalTT').modal('show');
+        });
+
+        // ==================== Cập Nhật ====================
+        $(document).on('click', "button[name='update']", function () {
+            let idTT = $(this).closest('tr').attr('id');
+            $.ajax({
+                url: '/Admin/TrangTin/DetailAjax',
+                type: 'GET',
+                data: { maTT: idTT },
+                success: function (data) {
+                    if (data.code == 200) {
+                        $('#txtTenTrang').val(data.tt.TenTrang);
+                        $('#txtNoiDung').val(data.tt.NoiDung);
+                        $('#txtTenTrang').prop('readonly', false);
+                        $('#txtNoiDung').prop('readonly', false);
+                        $('#btnSubmit').show();
+                        $('#modalTitle').text('Cập nhật Trang tin');
+                        $('#maTT').val(idTT);
+                        $('#modalTT').modal('show');
+                    } else {
+                        alert(data.msg);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert('Lỗi khi lấy thông tin: ' + error);
+                }
+            });
+        });
+
+        // ==================== Xóa ====================
+        $(document).on('click', "button[name='delete']", function () {
+            let idTT = $(this).closest('tr').attr('id');
+
+            if (confirm('Bạn có chắc chắn muốn xóa trang tin này?')) {
+                $.ajax({
+                    url: '/Admin/TrangTin/DeleteAjax',
+                    type: 'POST',
+                    data: { maTT: idTT },
+                    success: function (data) {
+                        if (data.code == 200) {
+                            alert(data.msg);
+                            LoadDsTrangTin();
+                        } else {
+                            alert(data.msg);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Lỗi khi xóa: ' + error);
+                    }
+                });
+            }
+        });
+
+        // ==================== Submit (Lưu) ====================
+        $('#btnSubmit').click(function () {
+            let strTenTrang = $('#txtTenTrang').val().trim();
+
+            // Validation
+            if (strTenTrang.length == 0) {
+                alert('Vui lòng nhập tên trang');
+                $('#txtTenTrang').focus();
+                return;
+            }
+
+            let maTT = $('#maTT').val().trim();
+            let strNoiDung = $('#txtNoiDung').val();
+
+            // Nếu maTT rỗng => Thêm mới
+            if (maTT == '' || maTT == '0') {
+                $.ajax({
+                    url: '/Admin/TrangTin/AddTrangTin',
+                    type: 'POST',
+                    data: {
+                        tenTrang: strTenTrang,
+                        noiDung: strNoiDung
+                    },
+                    success: function (data) {
+                        if (data.code == 200) {
+                            alert(data.msg);
+                            $('#modalTT').modal('hide');
+                            LoadDsTrangTin();
+                            $('#txtTenTrang').val('');
+                            $('#txtNoiDung').val('');
+                        } else {
+                            alert(data.msg);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Lỗi khi thêm: ' + error);
+                    }
+                });
+            }
+            // Ngược lại => Cập nhật
+            else {
+                $.ajax({
+                    url: '/Admin/TrangTin/UpdateAjax',
+                    type: 'POST',
+                    data: {
+                        maTT: maTT,
+                        tenTrang: strTenTrang,
+                        noiDung: strNoiDung
+                    },
+                    success: function (data) {
+                        if (data.code == 200) {
+                            alert(data.msg);
+                            $('#modalTT').modal('hide');
+                            LoadDsTrangTin();
+                        } else {
+                            alert(data.msg);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Lỗi khi cập nhật: ' + error);
+                    }
+                });
+            }
+        });
+
+        // ==================== Reset Modal khi đóng ====================
+        $('#modalTT').on('hidden.bs.modal', function () {
+            $('#maTT').val('');
+            $('#txtTenTrang').val('');
+            $('#txtNoiDung').val('');
+            $('#txtTenTrang').prop('readonly', false);
+            $('#txtNoiDung').prop('readonly', false);
+            $('#btnSubmit').show();
+        });
+    </script>
+}

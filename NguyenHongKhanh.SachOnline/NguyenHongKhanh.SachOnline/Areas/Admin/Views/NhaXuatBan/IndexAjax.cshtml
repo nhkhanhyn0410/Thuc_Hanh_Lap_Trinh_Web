@@ -1,0 +1,301 @@
+@{
+    ViewBag.Title = "Quản lý Nhà xuất bản";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .btn-success {
+        margin-bottom: 15px;
+    }
+
+    .table thead th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+    }
+
+    .action-buttons button {
+        margin-right: 5px;
+    }
+</style>
+
+<div class="container-fluid">
+    <h2>@ViewBag.Title</h2>
+    <hr />
+
+    <button class="btn btn-success" id="btnAdd">
+        <i class="fa fa-plus" aria-hidden="true"></i> Thêm Nhà Xuất Bản
+    </button>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th class="col-md-3">Tên Nhà Xuất Bản</th>
+                <th class="col-md-3">Địa Chỉ</th>
+                <th class="col-md-2">Điện Thoại</th>
+                <th class="col-md-4 text-right">Các chức năng</th>
+            </tr>
+        </thead>
+        <tbody id="tblDsNhaXuatBan">
+            <!-- Dữ liệu sẽ được load bằng AJAX -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal cho Chi tiết/Thêm/Sửa -->
+<div class="modal fade" id="modalNXB" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="hidden" id="maNXB" value="" />
+                    <label for="txtTenNXB">Tên nhà xuất bản <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="txtTenNXB" placeholder="Nhập tên nhà xuất bản" />
+                </div>
+                <div class="form-group">
+                    <label for="txtDiaChi">Địa chỉ</label>
+                    <input type="text" class="form-control" id="txtDiaChi" placeholder="Nhập địa chỉ" />
+                </div>
+                <div class="form-group">
+                    <label for="txtDienThoai">Điện thoại</label>
+                    <input type="text" class="form-control" id="txtDienThoai" placeholder="Nhập số điện thoại" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" id="btnSubmit">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script{
+    <script>
+        // ==================== Document Ready ====================
+        $(document).ready(function () {
+            LoadDsNhaXuatBan();
+        });
+
+        // ==================== Hàm Load Danh Sách ====================
+        function LoadDsNhaXuatBan() {
+            $.ajax({
+                url: '/Admin/NhaXuatBan/DsNhaXuatBan',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.code == 200) {
+                        $('#tblDsNhaXuatBan').empty();
+
+                        if (data.dsNXB.length === 0) {
+                            $('#tblDsNhaXuatBan').append('<tr><td colspan="4" class="text-center">Chưa có dữ liệu</td></tr>');
+                            return;
+                        }
+
+                        $.each(data.dsNXB, function (i, v) {
+                            let s = '<tr id="' + v.MaNXB + '">';
+                            s += '<td>' + v.TenNXB + '</td>';
+                            s += '<td>' + (v.DiaChi || '') + '</td>';
+                            s += '<td>' + (v.DienThoai || '') + '</td>';
+                            s += '<td class="text-right action-buttons">';
+                            s += '<button class="btn btn-sm btn-info" name="view" title="Xem chi tiết">';
+                            s += '<i class="fa fa-info-circle" aria-hidden="true"></i></button>';
+                            s += '<button class="btn btn-sm btn-warning" name="update" title="Chỉnh sửa">';
+                            s += '<i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>';
+                            s += '<button class="btn btn-sm btn-danger" name="delete" title="Xóa">';
+                            s += '<i class="fa fa-trash" aria-hidden="true"></i></button>';
+                            s += '</td>';
+                            s += '</tr>';
+                            $('#tblDsNhaXuatBan').append(s);
+                        });
+                    } else {
+                        alert(data.msg);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert('Lỗi khi tải danh sách: ' + error);
+                }
+            });
+        }
+
+        // ==================== Xem Chi Tiết ====================
+        $(document).on('click', "button[name='view']", function () {
+            let idNXB = $(this).closest('tr').attr('id');
+            $.ajax({
+                url: '/Admin/NhaXuatBan/DetailAjax',
+                type: 'GET',
+                data: { maNXB: idNXB },
+                success: function (data) {
+                    if (data.code == 200) {
+                        $('#txtTenNXB').val(data.nxb.TenNXB);
+                        $('#txtDiaChi').val(data.nxb.DiaChi);
+                        $('#txtDienThoai').val(data.nxb.DienThoai);
+                        $('#txtTenNXB').prop('readonly', true);
+                        $('#txtDiaChi').prop('readonly', true);
+                        $('#txtDienThoai').prop('readonly', true);
+                        $('#btnSubmit').hide();
+                        $('#modalTitle').text('Xem chi tiết Nhà xuất bản');
+                        $('#modalNXB').modal('show');
+                    } else {
+                        alert(data.msg);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert('Lỗi khi lấy thông tin: ' + error);
+                }
+            });
+        });
+
+        // ==================== Thêm Mới ====================
+        $('#btnAdd').click(function () {
+            $('#modalTitle').text('Thêm mới Nhà xuất bản');
+            $('#maNXB').val('');
+            $('#txtTenNXB').val('');
+            $('#txtDiaChi').val('');
+            $('#txtDienThoai').val('');
+            $('#txtTenNXB').prop('readonly', false);
+            $('#txtDiaChi').prop('readonly', false);
+            $('#txtDienThoai').prop('readonly', false);
+            $('#btnSubmit').show();
+            $('#modalNXB').modal('show');
+        });
+
+        // ==================== Cập Nhật ====================
+        $(document).on('click', "button[name='update']", function () {
+            let idNXB = $(this).closest('tr').attr('id');
+            $.ajax({
+                url: '/Admin/NhaXuatBan/DetailAjax',
+                type: 'GET',
+                data: { maNXB: idNXB },
+                success: function (data) {
+                    if (data.code == 200) {
+                        $('#txtTenNXB').val(data.nxb.TenNXB);
+                        $('#txtDiaChi').val(data.nxb.DiaChi);
+                        $('#txtDienThoai').val(data.nxb.DienThoai);
+                        $('#txtTenNXB').prop('readonly', false);
+                        $('#txtDiaChi').prop('readonly', false);
+                        $('#txtDienThoai').prop('readonly', false);
+                        $('#btnSubmit').show();
+                        $('#modalTitle').text('Cập nhật Nhà xuất bản');
+                        $('#maNXB').val(idNXB);
+                        $('#modalNXB').modal('show');
+                    } else {
+                        alert(data.msg);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert('Lỗi khi lấy thông tin: ' + error);
+                }
+            });
+        });
+
+        // ==================== Xóa ====================
+        $(document).on('click', "button[name='delete']", function () {
+            let idNXB = $(this).closest('tr').attr('id');
+
+            if (confirm('Bạn có chắc chắn muốn xóa nhà xuất bản này?')) {
+                $.ajax({
+                    url: '/Admin/NhaXuatBan/DeleteAjax',
+                    type: 'POST',
+                    data: { maNXB: idNXB },
+                    success: function (data) {
+                        if (data.code == 200) {
+                            alert(data.msg);
+                            LoadDsNhaXuatBan();
+                        } else {
+                            alert(data.msg);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Lỗi khi xóa: ' + error);
+                    }
+                });
+            }
+        });
+
+        // ==================== Submit (Lưu) ====================
+        $('#btnSubmit').click(function () {
+            let strTenNXB = $('#txtTenNXB').val().trim();
+
+            // Validation
+            if (strTenNXB.length == 0) {
+                alert('Vui lòng nhập tên nhà xuất bản');
+                $('#txtTenNXB').focus();
+                return;
+            }
+
+            let maNXB = $('#maNXB').val().trim();
+            let strDiaChi = $('#txtDiaChi').val().trim();
+            let strDienThoai = $('#txtDienThoai').val().trim();
+
+            // Nếu maNXB rỗng => Thêm mới
+            if (maNXB == '' || maNXB == '0') {
+                $.ajax({
+                    url: '/Admin/NhaXuatBan/AddNhaXuatBan',
+                    type: 'POST',
+                    data: {
+                        tenNXB: strTenNXB,
+                        diaChi: strDiaChi,
+                        dienThoai: strDienThoai
+                    },
+                    success: function (data) {
+                        if (data.code == 200) {
+                            alert(data.msg);
+                            $('#modalNXB').modal('hide');
+                            LoadDsNhaXuatBan();
+                            $('#txtTenNXB').val('');
+                            $('#txtDiaChi').val('');
+                            $('#txtDienThoai').val('');
+                        } else {
+                            alert(data.msg);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Lỗi khi thêm: ' + error);
+                    }
+                });
+            }
+            // Ngược lại => Cập nhật
+            else {
+                $.ajax({
+                    url: '/Admin/NhaXuatBan/UpdateAjax',
+                    type: 'POST',
+                    data: {
+                        maNXB: maNXB,
+                        tenNXB: strTenNXB,
+                        diaChi: strDiaChi,
+                        dienThoai: strDienThoai
+                    },
+                    success: function (data) {
+                        if (data.code == 200) {
+                            alert(data.msg);
+                            $('#modalNXB').modal('hide');
+                            LoadDsNhaXuatBan();
+                        } else {
+                            alert(data.msg);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Lỗi khi cập nhật: ' + error);
+                    }
+                });
+            }
+        });
+
+        // ==================== Reset Modal khi đóng ====================
+        $('#modalNXB').on('hidden.bs.modal', function () {
+            $('#maNXB').val('');
+            $('#txtTenNXB').val('');
+            $('#txtDiaChi').val('');
+            $('#txtDienThoai').val('');
+            $('#txtTenNXB').prop('readonly', false);
+            $('#txtDiaChi').prop('readonly', false);
+            $('#txtDienThoai').prop('readonly', false);
+            $('#btnSubmit').show();
+        });
+    </script>
+}

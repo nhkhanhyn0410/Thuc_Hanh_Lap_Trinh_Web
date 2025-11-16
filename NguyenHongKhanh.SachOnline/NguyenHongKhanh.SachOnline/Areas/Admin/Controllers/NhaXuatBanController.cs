@@ -15,6 +15,13 @@ namespace NguyenHongKhanh.SachOnline.Areas.Admin.Controllers
         // GET: Admin/NhaXuatBan
         public ActionResult Index(int? page)
         {
+            // Sử dụng view AJAX mới
+            return View("IndexAjax");
+        }
+
+        // GET: Admin/NhaXuatBan (Old version with pagination)
+        public ActionResult IndexOld(int? page)
+        {
             int iPageNum = (page ?? 1);
             int iPageSize = 10;
             return View(data.NHAXUATBANs.ToList().OrderBy(n => n.MaNXB).ToPagedList(iPageNum, iPageSize));
@@ -123,6 +130,226 @@ namespace NguyenHongKhanh.SachOnline.Areas.Admin.Controllers
             data.NHAXUATBANs.Remove(nxb);
             data.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // =============== AJAX METHODS (Lab 08) ===============
+
+        /// <summary>
+        /// Lấy danh sách Nhà xuất bản dạng JSON
+        /// </summary>
+        [HttpGet]
+        public JsonResult DsNhaXuatBan()
+        {
+            try
+            {
+                var dsNXB = (from nxb in data.NHAXUATBANs
+                            select new
+                            {
+                                MaNXB = nxb.MaNXB,
+                                TenNXB = nxb.TenNXB,
+                                DiaChi = nxb.DiaChi,
+                                DienThoai = nxb.DienThoai
+                            }).ToList();
+
+                return Json(new
+                {
+                    code = 200,
+                    dsNXB = dsNXB,
+                    msg = "Lấy danh sách nhà xuất bản thành công"
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    code = 500,
+                    msg = "Lấy danh sách nhà xuất bản thất bại: " + ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// Lấy chi tiết một Nhà xuất bản theo MaNXB
+        /// </summary>
+        [HttpGet]
+        public JsonResult DetailAjax(int maNXB)
+        {
+            try
+            {
+                var nxb = (from n in data.NHAXUATBANs
+                          where n.MaNXB == maNXB
+                          select new
+                          {
+                              MaNXB = n.MaNXB,
+                              TenNXB = n.TenNXB,
+                              DiaChi = n.DiaChi,
+                              DienThoai = n.DienThoai
+                          }).SingleOrDefault();
+
+                if (nxb == null)
+                {
+                    return Json(new
+                    {
+                        code = 404,
+                        msg = "Không tìm thấy nhà xuất bản"
+                    }, JsonRequestBehavior.AllowGet);
+                }
+
+                return Json(new
+                {
+                    code = 200,
+                    nxb = nxb,
+                    msg = "Lấy thông tin nhà xuất bản thành công."
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    code = 500,
+                    msg = "Lấy thông tin nhà xuất bản thất bại: " + ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// Thêm mới Nhà xuất bản
+        /// </summary>
+        [HttpPost]
+        public JsonResult AddNhaXuatBan(string tenNXB, string diaChi, string dienThoai)
+        {
+            try
+            {
+                // Validation
+                if (string.IsNullOrWhiteSpace(tenNXB))
+                {
+                    return Json(new
+                    {
+                        code = 400,
+                        msg = "Tên nhà xuất bản không được để trống"
+                    }, JsonRequestBehavior.AllowGet);
+                }
+
+                var nxb = new NHAXUATBAN();
+                nxb.TenNXB = tenNXB.Trim();
+                nxb.DiaChi = string.IsNullOrWhiteSpace(diaChi) ? "" : diaChi.Trim();
+                nxb.DienThoai = string.IsNullOrWhiteSpace(dienThoai) ? "" : dienThoai.Trim();
+
+                data.NHAXUATBANs.Add(nxb);
+                data.SaveChanges();
+
+                return Json(new
+                {
+                    code = 200,
+                    msg = "Thêm nhà xuất bản thành công."
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    code = 500,
+                    msg = "Thêm nhà xuất bản thất bại. Lỗi: " + ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// Cập nhật Nhà xuất bản
+        /// </summary>
+        [HttpPost]
+        public JsonResult UpdateAjax(int maNXB, string tenNXB, string diaChi, string dienThoai)
+        {
+            try
+            {
+                // Validation
+                if (string.IsNullOrWhiteSpace(tenNXB))
+                {
+                    return Json(new
+                    {
+                        code = 400,
+                        msg = "Tên nhà xuất bản không được để trống"
+                    }, JsonRequestBehavior.AllowGet);
+                }
+
+                var nxb = data.NHAXUATBANs.SingleOrDefault(n => n.MaNXB == maNXB);
+
+                if (nxb == null)
+                {
+                    return Json(new
+                    {
+                        code = 404,
+                        msg = "Không tìm thấy nhà xuất bản cần sửa"
+                    }, JsonRequestBehavior.AllowGet);
+                }
+
+                nxb.TenNXB = tenNXB.Trim();
+                nxb.DiaChi = string.IsNullOrWhiteSpace(diaChi) ? "" : diaChi.Trim();
+                nxb.DienThoai = string.IsNullOrWhiteSpace(dienThoai) ? "" : dienThoai.Trim();
+                data.SaveChanges();
+
+                return Json(new
+                {
+                    code = 200,
+                    msg = "Sửa nhà xuất bản thành công."
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    code = 500,
+                    msg = "Sửa nhà xuất bản thất bại. Lỗi: " + ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// Xóa Nhà xuất bản
+        /// </summary>
+        [HttpPost]
+        public JsonResult DeleteAjax(int maNXB)
+        {
+            try
+            {
+                var nxb = data.NHAXUATBANs.SingleOrDefault(n => n.MaNXB == maNXB);
+
+                if (nxb == null)
+                {
+                    return Json(new
+                    {
+                        code = 404,
+                        msg = "Không tìm thấy nhà xuất bản cần xóa"
+                    }, JsonRequestBehavior.AllowGet);
+                }
+
+                // Kiểm tra ràng buộc khóa ngoại
+                if (nxb.SACHes.Any())
+                {
+                    return Json(new
+                    {
+                        code = 400,
+                        msg = "Không thể xóa nhà xuất bản này vì đã có sách liên quan"
+                    }, JsonRequestBehavior.AllowGet);
+                }
+
+                data.NHAXUATBANs.Remove(nxb);
+                data.SaveChanges();
+
+                return Json(new
+                {
+                    code = 200,
+                    msg = "Xóa nhà xuất bản thành công."
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    code = 500,
+                    msg = "Xóa nhà xuất bản thất bại. Lỗi: " + ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
         }
     }
 }

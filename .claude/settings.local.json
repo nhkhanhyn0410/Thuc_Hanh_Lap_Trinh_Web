@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(dotnet restore:*)",
+      "Bash(msbuild:*)",
+      "Bash(dotnet build:*)",
+      "Bash(dotnet workload:*)",
+      "Bash(where iisexpress)",
+      "Bash(test:*)",
+      "Bash(\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe\" NguyenHongKhanh.SachOnline.sln /t:Rebuild /p:Configuration=Debug /v:m)",
+      "Bash(\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe\" \"E:\\Thuc_Hanh_Lap_Trinh_Web\\NguyenHongKhanh.SachOnline\\NguyenHongKhanh.SachOnline.sln\" /t:Rebuild /p:Configuration=Debug /v:m)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -15,6 +15,13 @@ namespace NguyenHongKhanh.SachOnline.Areas.Admin.Controllers
         // GET: Admin/KhachHang
         public ActionResult Index(int? page)
         {
+            // Sử dụng view AJAX mới
+            return View("IndexAjax");
+        }
+
+        // GET: Admin/KhachHang (Old version with pagination)
+        public ActionResult IndexOld(int? page)
+        {
             int iPageNum = (page ?? 1);
             int iPageSize = 10;
             return View(data.KHACHHANGs.ToList().OrderBy(n => n.MaKH).ToPagedList(iPageNum, iPageSize));
@@ -105,6 +112,201 @@ namespace NguyenHongKhanh.SachOnline.Areas.Admin.Controllers
             data.KHACHHANGs.Remove(kh);
             data.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // =============== AJAX METHODS (Lab 08) ===============
+
+        /// <summary>
+        /// Lấy danh sách Khách hàng dạng JSON
+        /// </summary>
+        [HttpGet]
+        public JsonResult DsKhachHang()
+        {
+            try
+            {
+                var dsKH = (from kh in data.KHACHHANGs
+                           select new
+                           {
+                               MaKH = kh.MaKH,
+                               HoTen = kh.HoTen,
+                               TaiKhoan = kh.TaiKhoan,
+                               Email = kh.Email,
+                               DiaChi = kh.DiaChi,
+                               DienThoai = kh.DienThoai,
+                               NgaySinh = kh.NgaySinh
+                           }).ToList();
+
+                return Json(new
+                {
+                    code = 200,
+                    dsKH = dsKH,
+                    msg = "Lấy danh sách khách hàng thành công"
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    code = 500,
+                    msg = "Lấy danh sách khách hàng thất bại: " + ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// Lấy chi tiết một Khách hàng theo MaKH
+        /// </summary>
+        [HttpGet]
+        public JsonResult DetailAjax(int maKH)
+        {
+            try
+            {
+                var kh = (from k in data.KHACHHANGs
+                         where k.MaKH == maKH
+                         select new
+                         {
+                             MaKH = k.MaKH,
+                             HoTen = k.HoTen,
+                             TaiKhoan = k.TaiKhoan,
+                             Email = k.Email,
+                             DiaChi = k.DiaChi,
+                             DienThoai = k.DienThoai,
+                             NgaySinh = k.NgaySinh
+                         }).SingleOrDefault();
+
+                if (kh == null)
+                {
+                    return Json(new
+                    {
+                        code = 404,
+                        msg = "Không tìm thấy khách hàng"
+                    }, JsonRequestBehavior.AllowGet);
+                }
+
+                return Json(new
+                {
+                    code = 200,
+                    kh = kh,
+                    msg = "Lấy thông tin khách hàng thành công."
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    code = 500,
+                    msg = "Lấy thông tin khách hàng thất bại: " + ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// Cập nhật Khách hàng
+        /// </summary>
+        [HttpPost]
+        public JsonResult UpdateAjax(int maKH, string hoTen, string email, string diaChi, string dienThoai, string ngaySinh)
+        {
+            try
+            {
+                // Validation
+                if (string.IsNullOrWhiteSpace(hoTen))
+                {
+                    return Json(new
+                    {
+                        code = 400,
+                        msg = "Họ tên không được để trống"
+                    }, JsonRequestBehavior.AllowGet);
+                }
+
+                var kh = data.KHACHHANGs.SingleOrDefault(k => k.MaKH == maKH);
+
+                if (kh == null)
+                {
+                    return Json(new
+                    {
+                        code = 404,
+                        msg = "Không tìm thấy khách hàng cần sửa"
+                    }, JsonRequestBehavior.AllowGet);
+                }
+
+                kh.HoTen = hoTen.Trim();
+                kh.Email = string.IsNullOrWhiteSpace(email) ? "" : email.Trim();
+                kh.DiaChi = string.IsNullOrWhiteSpace(diaChi) ? "" : diaChi.Trim();
+                kh.DienThoai = string.IsNullOrWhiteSpace(dienThoai) ? "" : dienThoai.Trim();
+
+                if (!string.IsNullOrWhiteSpace(ngaySinh))
+                {
+                    DateTime parsedDate;
+                    if (DateTime.TryParse(ngaySinh, out parsedDate))
+                    {
+                        kh.NgaySinh = parsedDate;
+                    }
+                }
+
+                data.SaveChanges();
+
+                return Json(new
+                {
+                    code = 200,
+                    msg = "Cập nhật khách hàng thành công."
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    code = 500,
+                    msg = "Cập nhật khách hàng thất bại. Lỗi: " + ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// Xóa Khách hàng
+        /// </summary>
+        [HttpPost]
+        public JsonResult DeleteAjax(int maKH)
+        {
+            try
+            {
+                var kh = data.KHACHHANGs.SingleOrDefault(k => k.MaKH == maKH);
+
+                if (kh == null)
+                {
+                    return Json(new
+                    {
+                        code = 404,
+                        msg = "Không tìm thấy khách hàng cần xóa"
+                    }, JsonRequestBehavior.AllowGet);
+                }
+
+                // Kiểm tra ràng buộc khóa ngoại
+                if (kh.DONDATHANGs.Any())
+                {
+                    return Json(new
+                    {
+                        code = 400,
+                        msg = "Không thể xóa khách hàng này vì đã có đơn hàng liên quan"
+                    }, JsonRequestBehavior.AllowGet);
+                }
+
+                data.KHACHHANGs.Remove(kh);
+                data.SaveChanges();
+
+                return Json(new
+                {
+                    code = 200,
+                    msg = "Xóa khách hàng thành công."
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    code = 500,
+                    msg = "Xóa khách hàng thất bại. Lỗi: " + ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
         }
     }
 }

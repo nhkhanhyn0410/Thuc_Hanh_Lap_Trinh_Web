@@ -1,126 +1,131 @@
-using NguyenHongKhanh.SachOnline.Filters;
 using NguyenHongKhanh.SachOnline.Models;
 using PagedList;
+using PagedList.Mvc;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace NguyenHongKhanh.SachOnline.Areas.Admin.Controllers
 {
-    [AdminAuthorize]
     public class ChuDeController : Controller
     {
-        SachOnlineDataEntities data = new SachOnlineDataEntities();
+        SachOnlineDataEntities db = new SachOnlineDataEntities();
 
         // GET: Admin/ChuDe
-        public ActionResult Index(int? page)
-        {
-            int iPageNum = (page ?? 1);
-            int iPageSize = 10;
-            return View(data.CHUDEs.ToList().OrderBy(n => n.MaCD).ToPagedList(iPageNum, iPageSize));
-        }
-
-        // GET: Admin/ChuDe/Details/5
-        public ActionResult Details(int id)
-        {
-            var chuDe = data.CHUDEs.SingleOrDefault(n => n.MaCD == id);
-            if (chuDe == null)
-            {
-                Response.StatusCode = 404;
-                return null;
-            }
-            return View(chuDe);
-        }
-
-        // GET: Admin/ChuDe/Create
-        [HttpGet]
-        public ActionResult Create()
+        public ActionResult Index()
         {
             return View();
         }
 
-        // POST: Admin/ChuDe/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(CHUDE chuDe)
-        {
-            if (ModelState.IsValid)
-            {
-                data.CHUDEs.Add(chuDe);
-                data.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(chuDe);
-        }
-
-        // GET: Admin/ChuDe/Edit/5
+        // GET: Lấy danh sách Chủ đề dạng JSON
         [HttpGet]
-        public ActionResult Edit(int id)
+        public JsonResult DsChuDe()
         {
-            var chuDe = data.CHUDEs.SingleOrDefault(n => n.MaCD == id);
-            if (chuDe == null)
+            try
             {
-                Response.StatusCode = 404;
-                return null;
+                var dsCD = (from cd in db.CHUDEs
+                            select new
+                            {
+                                MaCD = cd.MaCD,
+                                TenCD = cd.TenChuDe
+                            }).ToList();
+
+                return Json(new { code = 200, dsCD = dsCD, msg = "Lấy danh sách chủ đề thành công" },
+                           JsonRequestBehavior.AllowGet);
             }
-            return View(chuDe);
+            catch (Exception ex)
+            {
+                return Json(new { code = 500, msg = "Lấy danh sách chủ đề thất bại: " + ex.Message },
+                           JsonRequestBehavior.AllowGet);
+            }
         }
 
-        // POST: Admin/ChuDe/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(CHUDE chuDe)
-        {
-            if (ModelState.IsValid)
-            {
-                var existingChuDe = data.CHUDEs.Find(chuDe.MaCD);
-                if (existingChuDe != null)
-                {
-                    existingChuDe.TenChuDe = chuDe.TenChuDe;
-                    data.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-            }
-            return View(chuDe);
-        }
-
-        // GET: Admin/ChuDe/Delete/5
+        // GET: Chi tiết Chủ đề
         [HttpGet]
-        public ActionResult Delete(int id)
+        public JsonResult Detail(int maCD)
         {
-            var chuDe = data.CHUDEs.SingleOrDefault(n => n.MaCD == id);
-            if (chuDe == null)
+            try
             {
-                Response.StatusCode = 404;
-                return null;
+                var cd = (from s in db.CHUDEs
+                          where s.MaCD == maCD
+                          select new
+                          {
+                              MaCD = s.MaCD,
+                              TenChuDe = s.TenChuDe
+                          }).SingleOrDefault();
+
+                return Json(new { code = 200, cd = cd, msg = "Lấy thông tin chủ đề thành công." },
+                           JsonRequestBehavior.AllowGet);
             }
-            return View(chuDe);
+            catch (Exception ex)
+            {
+                return Json(new { code = 500, msg = "Lấy thông tin chủ đề thất bại: " + ex.Message },
+                           JsonRequestBehavior.AllowGet);
+            }
         }
 
-        // POST: Admin/ChuDe/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirm(int id)
+        // POST: Thêm mới Chủ đề
+        [HttpPost]
+        public JsonResult AddChuDe(string strTenCD)
         {
-            var chuDe = data.CHUDEs.SingleOrDefault(n => n.MaCD == id);
-            if (chuDe == null)
+            try
             {
-                Response.StatusCode = 404;
-                return null;
-            }
+                var cd = new CHUDE();
+                cd.TenChuDe = strTenCD;
+                db.CHUDEs.Add(cd);
+                db.SaveChanges();
 
-            // Kiểm tra xem có sách nào thuộc chủ đề này không
-            var sachThuocChuDe = data.SACHes.Where(s => s.MaCD == id);
-            if (sachThuocChuDe.Count() > 0)
+                return Json(new { code = 200, msg = "Thêm chủ đề thành công." },
+                           JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
             {
-                ViewBag.ThongBao = "Không thể xóa chủ đề này vì đang có " + sachThuocChuDe.Count() + " sách thuộc chủ đề này.<br>" +
-                    "Vui lòng xóa hoặc chuyển các sách sang chủ đề khác trước khi xóa.";
-                return View(chuDe);
+                return Json(new { code = 500, msg = "Thêm chủ đề thất bại. Lỗi: " + ex.Message },
+                           JsonRequestBehavior.AllowGet);
             }
+        }
 
-            data.CHUDEs.Remove(chuDe);
-            data.SaveChanges();
-            return RedirectToAction("Index");
+        // POST: Cập nhật Chủ đề
+        [HttpPost]
+        public JsonResult Update(int maCD, string strTenCD)
+        {
+            try
+            {
+                var cd = db.CHUDEs.SingleOrDefault(c => c.MaCD == maCD);
+                cd.TenChuDe = strTenCD;
+                db.SaveChanges();
+
+                return Json(new { code = 200, msg = "Sửa chủ đề thành công." },
+                           JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { code = 500, msg = "Sửa chủ đề thất bại. Lỗi: " + ex.Message },
+                           JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        // POST: Xóa Chủ đề
+        [HttpPost]
+        public JsonResult Delete(int maCD)
+        {
+            try
+            {
+                var cd = db.CHUDEs.SingleOrDefault(c => c.MaCD == maCD);
+                db.CHUDEs.Remove(cd);
+                db.SaveChanges();
+
+                return Json(new { code = 200, msg = "Xóa chủ đề thành công." },
+                           JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { code = 500, msg = "Xóa chủ đề thất bại. Lỗi: " + ex.Message },
+                           JsonRequestBehavior.AllowGet);
+            }
         }
     }
 }
